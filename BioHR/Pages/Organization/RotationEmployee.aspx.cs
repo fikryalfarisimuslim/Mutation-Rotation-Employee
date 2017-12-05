@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace BioHR.Pages.Organization
 {
-    public partial class RotationEmployee : System.Web.UI.Page
+    public partial class RotationEmployee : BioHR.Controller.BasePage
     {
 
         DataTable dtblContractDetailRotation = new DataTable();

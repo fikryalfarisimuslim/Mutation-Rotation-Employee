@@ -8,6 +8,24 @@
 
 
     <script type = "text/javascript">
+        var UNITKERJA = JSON.parse(window.localStorage.getItem("UNITKERJA")); // Retrieving
+        var JABATAN = JSON.parse(window.localStorage.getItem("JABATAN")); // Retrieving
+        var NIK = JSON.parse(window.localStorage.getItem("NIK")); // Retrieving
+        var NAMA = JSON.parse(window.localStorage.getItem("NAMA")); // Retrieving
+        var i, j, n, x;
+
+        /*Jika data gak ada yang di pilih*/
+        
+        try {
+            
+            n = NIK.length;
+     
+        }
+        catch (err) {
+            window.open('ListOfEmployee.aspx', '_self', false);
+            window.alert("Pilih karyawan terlebih dahulu");
+        }
+
         function getValueTanggalBerlaku() {
             $(document).ready(function () {
 
@@ -30,6 +48,34 @@
                 });
 
             });
+        }
+
+
+        function changeRotation(x) {
+            
+            var selectedValue = x.options[x.selectedIndex].value;
+            var iUnitKerja = "iUnitKerja" + tempSetInputID;
+            var iJabatan = "iJabatan" + tempSetInputID;
+            document.getElementById(iUnitKerja).value = UNITKERJA[selectedValue];
+            document.getElementById(iJabatan).value = JABATAN[selectedValue];
+
+            //window.alert(selectedValue);
+        }
+
+        /*untuk mengetahui bagian colapse mana yang akan di Set input text Unitkerja dan jabatan*/
+        var tempSetInputID;
+        function getInputID(i) {
+            tempSetInputID = i;
+            //window.alert(i);
+        }
+
+        /*on Close page*/
+        window.onbeforeunload = onClose();
+
+        function onClose() {
+            window.localStorage.clear();//clear local storage agar kembali ke posisi awal untuk memilih karyawan
+
+            return null;
         }
         
     </script>
@@ -175,434 +221,156 @@
                 </header>
                 <div class="panel-body">
                     <div id="accordion" class="panel-group m-bot20">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" style="background-color:#EC6459">
-                                <h4 class="panel-title">
-                                    <a href="#collapseOne" data-parent="#accordion" data-toggle="collapse" class="accordion-toggle" style="color:white">
-                                        <i class="icon icon-plus-sign" style="float:right;font-size:x-large;margin-top:-5px"></i>
-                                        001 Agung
-                                    </a>
-                                </h4>
-                            </div>
-                            <div class="panel-collapse collapse" id="collapseOne">
-                                <div class="panel-body" style="background-color:#F7F8FC">
-                                    <div class="row">
-                                        <div class="col-lg-6" style="border-right:solid;border-color:#EC6459;border-width:2px">
-                                            <h4 style="text-align:center">
-                                                Biodata Karyawan
-                                            </h4>
-                                            <br/>
-                                            <div class="row">
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            NIK
-                                                        </h5>
-                                                        <h5 class="col-lg-3">
-                                                            : 001
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            Nama Lengkap
-                                                        </h5>
-                                                        <h5 class="col-lg-3">
-                                                            : Agung
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <br/>
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            Jabatan Lama
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            Tempat
-                                                        </h5>
-                                                        <h5 class="col-lg-3">
-                                                            : Pasteur
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            Unit Kerja
-                                                        </h5>
-                                                        <h5 class="col-lg-3">
-                                                            : IT
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            Jabatan
-                                                        </h5>
-                                                        <h5 class="col-lg-3">
-                                                            : Kepala Divisi
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
 
-                                        <div class="col-lg-6">
-                                            <h4 style="text-align:center">
-                                                Tujuan Rotasi
-                                            </h4>
-                                            <br/>
-                                            <div class="row">
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            NIK/NAMA
-                                                        </h5>
-                                                        <div class="col-lg-3">
-                                                            <select aria-controls="editable-sample" class="form-control">
-                                                                <option value="1" selected="selected">002 Fikry</option>
-                                                                <option value="2">004 Agung Fikry</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            Tempat
-                                                        </h5>
-                                                        <div class="col-lg-3">
-                                                            <input type="text" class="form-control" required="required" id="iTempat" disabled="disabled" value="Pasteur"/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            Unit Kerja
-                                                        </h5>
-                                                        <div class="col-lg-3">
-                                                            <input type="text" class="form-control" required="required" id="iUnitKerja" disabled="disabled" value="SDM"/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            Jabatan
-                                                        </h5>
-                                                        <div class="col-lg-3">
-                                                            <input type="text" class="form-control" required="required" id="iJabatan" disabled="disabled" value="Kepala Divisi"/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <div class="col-lg-2 col-lg-offset-4" style="text-align:right;">
-                                                            <button type="button" class="btn btn-primary">Rotasi</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                        <script>
+                            var wrapper = document.getElementById("accordion");
+                            var myHTML = '';
+                            for (i = 0; i < n; i++) {
 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-  
-                        <div class="panel panel-default">
-                            <div class="panel-heading" style="background-color:#EC6459">
-                                <h4 class="panel-title">
-                                    <a href="#collapseTwo" data-parent="#accordion" data-toggle="collapse" class="accordion-toggle" style="color:white">
-                                        <i class="icon icon-plus-sign" style="float:right;font-size:x-large;margin-top:-5px"></i>
-                                        002 Fikry
-                                    </a>
-                                    </h4>
-                            </div>
-                            <div class="panel-collapse collapse" id="collapseTwo">
-                                <div class="panel-body" style="background-color:#F7F8FC">
-                                    <div class="row">
-                                        <div class="col-lg-6" style="border-right:solid;border-color:#EC6459;border-width:2px">
-                                            <h4 style="text-align:center">
-                                                Biodata Karyawan
-                                            </h4>
-                                            <br/>
-                                            <div class="row">
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            NIK
-                                                        </h5>
-                                                        <h5 class="col-lg-3">
-                                                            : 002
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            Nama Lengkap
-                                                        </h5>
-                                                        <h5 class="col-lg-3">
-                                                            : Fikry
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <br/>
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            Jabatan Lama
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            Tempat
-                                                        </h5>
-                                                        <h5 class="col-lg-3">
-                                                            : Pasteur
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            Unit Kerja
-                                                        </h5>
-                                                        <h5 class="col-lg-3">
-                                                            : IT
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            Jabatan
-                                                        </h5>
-                                                        <h5 class="col-lg-3">
-                                                            : Wakil Kepala Divisi
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                myHTML += '                         <div class="panel panel-default">';
+                                myHTML += '                            <div class="panel-heading" style="background-color:#EC6459">';
+                                myHTML += '                                <h4 class="panel-title">';
+                                myHTML += '                                    <a href="#collapse' + i + '" data-parent="#accordion" onclick="getInputID('+i+')" data-toggle="collapse" class="accordion-toggle" style="color:white">';
+                                myHTML += '                                        <i class="icon icon-plus-sign" style="float:right;font-size:x-large;margin-top:-5px"></i>';
+                                myHTML += '                                        ' + NIK[i] + " - " + NAMA[i];
+                                myHTML += '                                        ';
+                                myHTML += '                                    </a>';
+                                myHTML += '                                </h4>';
+                                myHTML += '                            </div>';
+                                myHTML += '                            <div class="panel-collapse collapse" id="collapse' + i + '">';
+                                myHTML += '                                <div class="panel-body" style="background-color:#F7F8FC">';
+                                myHTML += '                                    <div class="row">';
+                                myHTML += '                                        <div class="col-lg-6">';
+                                myHTML += '                                            <h4 style="text-align:center">';
+                                myHTML += '                                                Biodata Karyawan';
+                                myHTML += '                                            </h4>';
+                                myHTML += '                                            <br/>';
+                                myHTML += '                                            <div class="row">';
+                                myHTML += '                                                <div class="form-group">';
+                                myHTML += '                                                    <div class="container">';
+                                myHTML += '                                                        <h5 class="col-lg-2 col-lg-offset-1">';
+                                myHTML += '                                                            NIK';
+                                myHTML += '                                                        </h5>';
+                                myHTML += '                                                        <h5 class="col-lg-3">';
+                                myHTML += '                                                            : ' + NIK[i];
+                                myHTML += '                                                        </h5>';
+                                myHTML += '                                                    </div>';
+                                myHTML += '                                                </div>';
+                                myHTML += '                                                <div class="form-group">';
+                                myHTML += '                                                    <div class="container">';
+                                myHTML += '                                                        <h5 class="col-lg-2 col-lg-offset-1">';
+                                myHTML += '                                                            Nama Lengkap';
+                                myHTML += '                                                        </h5>';
+                                myHTML += '                                                        <h5 class="col-lg-3">';
+                                myHTML += '                                                            : ' + NAMA[i];
+                                myHTML += '                                                        </h5>';
+                                myHTML += '                                                    </div>';
+                                myHTML += '                                                </div>';
+                                myHTML += '                                                <br/>';
+                                myHTML += '                                                <div class="form-group">';
+                                myHTML += '                                                    <div class="container">';
+                                myHTML += '                                                        <h5 class="col-lg-2 col-lg-offset-1">';
+                                myHTML += '                                                            Jabatan Lama';
+                                myHTML += '                                                        </h5>';
+                                myHTML += '                                                    </div>';
+                                myHTML += '                                                </div>';
+                                myHTML += '                                                <div class="form-group">';
+                                myHTML += '                                                    <div class="container">';
+                                myHTML += '                                                        <h5 class="col-lg-2 col-lg-offset-1">';
+                                myHTML += '                                                            Unit Kerja';
+                                myHTML += '                                                        </h5>';
+                                myHTML += '                                                        <h5 class="col-lg-3">';
+                                myHTML += '                                                            : ' + UNITKERJA[i];
+                                myHTML += '                                                        </h5>';
+                                myHTML += '                                                    </div>';
+                                myHTML += '                                                </div>';
+                                myHTML += '                                                <div class="form-group">';
+                                myHTML += '                                                    <div class="container">';
+                                myHTML += '                                                        <h5 class="col-lg-2 col-lg-offset-1">';
+                                myHTML += '                                                            Jabatan';
+                                myHTML += '                                                        </h5>';
+                                myHTML += '                                                        <h5 class="col-lg-3">';
+                                myHTML += '                                                            : ' + JABATAN[i];
+                                myHTML += '                                                        </h5>';
+                                myHTML += '                                                    </div>';
+                                myHTML += '                                                </div>';
+                                myHTML += '                                            </div>';
+                                myHTML += '                                        </div>';
+                                myHTML += ''
+                                myHTML += '                                        <div class="col-lg-6" style="border-left:solid;border-color:#EC6459;border-width:2px">';
+                                myHTML += '                                            <h4 style="text-align:center">';
+                                myHTML += '                                                Tujuan Mutasi';
+                                myHTML += '                                            </h4>';
+                                myHTML += '                                            <br/>';
+                                myHTML += '                                            <div class="row">';
+                                myHTML += '                                                <div class="form-group">';
+                                myHTML += '                                                   <div class="container">';
+                                myHTML += '                                                        <div class="col-lg-12">';
+                                myHTML += '					                                            <div class="row">';
+                                myHTML += '						                                            <div class="form-group">';
+                                myHTML += '							                                            <div class="container">';
+                                myHTML += '							                                            	<h5 class="col-lg-2 col-lg-offset-1">';
+                                myHTML += '							                                            		NIK/Nama Lengkap';
+                                myHTML += '							                                            	</h5>';
+                                myHTML += '							                                            	<div class="col-lg-3">';
+                                myHTML += '									                                            <select id="selectRotation'+i+'" onchange="changeRotation(this);" aria-controls="editable-sample" class="form-control">';
+                                                                                                                            var stats = 0;
+                                                                                                                            var temp;
+                                                                                                                            for (j = 0; j < n; j++) {
+                                                                                                                                if (NIK[j] != NIK[i]) {
+                                                                                                                                    if (stats == 0) {//untuk mengambil data pertama yang di select dan di tampilkan di unit kerja dan jabatan
+                                                                                                                                        temp = j;
+                                                                                                                                        stats++;
+                                                                                                                                    }
+                                myHTML += '										                                           <option value="'+j+'" selected="selected">' + NIK[j] + " - " + NAMA[j]+'</option>';
+                                                                                                                                }
+                                                                                                                            }
+                                myHTML += '									                                             </select>';
+                                myHTML += '								                                            </div>';
+                                myHTML += '							                                            </div>';
+                                myHTML += '						                                            </div>';
+                                myHTML += '						                                            <div class="form-group">';
+                                myHTML += '						                                        	    <div class="container">';
+                                myHTML += '							                                        	    <h5 class="col-lg-2 col-lg-offset-1">';
+                                myHTML += '							                                        		    Unit Kerja';
+                                myHTML += '							                                        	    </h5>';
+                                myHTML += '								                                            <div class="col-lg-3">';
+                                myHTML += '								                                        	    <input type="text" class="form-control" required="required" id="iUnitKerja'+i+'" disabled="disabled" value="' + UNITKERJA[temp] + '"/>';
+                                myHTML += '							                                        	    </div>';
+                                myHTML += '						                                        	    </div>';
+                                myHTML += '						                                            </div>';
+                                myHTML += '						                                            <div class="form-group">';
+                                myHTML += '							                                            <div class="container">';
+                                myHTML += '							                            	                <h5 class="col-lg-2 col-lg-offset-1">';
+                                myHTML += '									                                            Jabatan';
+                                myHTML += '								                                            </h5>';
+                                myHTML += '								                                            <div class="col-lg-3">';
+                                myHTML += '								                                        	    <input type="text" class="form-control" required="required" id="iJabatan' + i + '" disabled="disabled" value="' + JABATAN[temp] + '"/>';
+                                myHTML += '								                                            </div>';
+                                myHTML += '							                                            </div>';
+                                myHTML += '						                                            </div>';
+                                myHTML += '					                                            </div>';
+                                myHTML += '                                                         </div>';
+                                myHTML += '                                                    </div>';
+                                myHTML += '                                                </div>';
+                                myHTML += '                                            </div>';
+                                myHTML += '                                        </div>';
+                                myHTML += '                                    </div>';
+                                myHTML += '                                    <div class="row" id="btnTable" >';
+                                myHTML += '                                        <div class="col-lg-3 col-lg-offset-9" style="text-align:right">';
+                                myHTML += '                                            <button type="button" class="btn btn-primary" id="mutasi" onClick="submitMutasi(' + i + ')">Submit Rotasi</button>';
+                                myHTML += '                                        </div>';
+                                myHTML += '                                    </div>';
+                                myHTML += '                                </div>';
+                                myHTML += '                            </div>';
+                                myHTML += '                        </div>';
 
-                                        <div class="col-lg-6">
-                                            <h4 style="text-align:center">
-                                                Tujuan Rotasi
-                                            </h4>
-                                            <br/>
-                                            <div class="row">
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            NIK/NAMA
-                                                        </h5>
-                                                        <div class="col-lg-3">
-                                                            <select aria-controls="editable-sample" class="form-control">
-                                                                <option value="1" selected="selected">001 Agung</option>
-                                                                <option value="2">004 Agung Fikry</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            Tempat
-                                                        </h5>
-                                                        <div class="col-lg-3">
-                                                            <input type="text" class="form-control" required="required" id="iTempat2" disabled="disabled" value="Pasteur"/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            Unit Kerja
-                                                        </h5>
-                                                        <div class="col-lg-3">
-                                                            <input type="text" class="form-control" required="required" id="iUnitKerja2" disabled="disabled" value="SDM"/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            Jabatan
-                                                        </h5>
-                                                        <div class="col-lg-3">
-                                                            <input type="text" class="form-control" required="required" id="iJabatan2" disabled="disabled" value="Wakil Kepala Divisi"/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <div class="col-lg-2 col-lg-offset-4" style="text-align:right;">
-                                                            <button type="button" class="btn btn-primary">Rotasi</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            }
+                            wrapper.innerHTML = myHTML
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading" style="background-color:#EC6459">
-                                <h4 class="panel-title">
-                                    <a href="#collapseThree" data-parent="#accordion" data-toggle="collapse" class="accordion-toggle" style="color:white">
-                                        <i class="icon icon-plus-sign" style="float:right;font-size:x-large;margin-top:-5px"></i>
-                                        004 Agung Fikry
-                                    </a>
-                                    </h4>
-                            </div>
-                            <div class="panel-collapse collapse" id="collapseThree">
-                                <div class="panel-body" style="background-color:#F7F8FC">
-                                    <div class="row">
-                                        <div class="col-lg-6" style="border-right:solid;border-color:#EC6459;border-width:2px">
-                                            <h4 style="text-align:center">
-                                                Biodata Karyawan
-                                            </h4>
-                                            <br/>
-                                            <div class="row">
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            NIK
-                                                        </h5>
-                                                        <h5 class="col-lg-3">
-                                                            : 004
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            Nama Lengkap
-                                                        </h5>
-                                                        <h5 class="col-lg-3">
-                                                            : Agung Fikry
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <br/>
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            Jabatan Lama
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            Tempat
-                                                        </h5>
-                                                        <h5 class="col-lg-3">
-                                                            : Pasteur
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            Unit Kerja
-                                                        </h5>
-                                                        <h5 class="col-lg-3">
-                                                            : IT
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            Jabatan
-                                                        </h5>
-                                                        <h5 class="col-lg-3">
-                                                            : Staff
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-6">
-                                            <h4 style="text-align:center">
-                                                Tujuan Rotasi
-                                            </h4>
-                                            <br/>
-                                            <div class="row">
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            NIK/NAMA
-                                                        </h5>
-                                                        <div class="col-lg-3">
-                                                            <select aria-controls="editable-sample" class="form-control">
-                                                                <option value="1" selected="selected">001 Agung</option>
-                                                                <option value="2">003 Fikry</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            Tempat
-                                                        </h5>
-                                                        <div class="col-lg-3">
-                                                            <input type="text" class="form-control" required="required" id="iTempat3" disabled="disabled" value="Pasteur"/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            Unit Kerja
-                                                        </h5>
-                                                        <div class="col-lg-3">
-                                                            <input type="text" class="form-control" required="required" id="iUnitKerja3" disabled="disabled" value="SDM"/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <h5 class="col-lg-2 col-lg-offset-1">
-                                                            Jabatan
-                                                        </h5>
-                                                        <div class="col-lg-3">
-                                                            <input type="text" class="form-control" required="required" id="iJabatan3" disabled="disabled" value="Staff"/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="container">
-                                                        <div class="col-lg-2 col-lg-offset-4" style="text-align:right;">
-                                                            <button type="button" class="btn btn-primary">Rotasi</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                          
+                        </script>
                     </div>
+
                     <div class="row">
                         <div class="col-lg-1 col-lg-offset-5">
                             <button type="button" class="btn btn-danger form-control">Batal</button>

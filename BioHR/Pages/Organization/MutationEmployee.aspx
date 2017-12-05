@@ -37,7 +37,6 @@
         var JABATAN = JSON.parse(window.localStorage.getItem("JABATAN")); // Retrieving
         var NIK = JSON.parse(window.localStorage.getItem("NIK")); // Retrieving
         var NAMA = JSON.parse(window.localStorage.getItem("NAMA")); // Retrieving
-        var STATUS = JSON.parse(window.localStorage.getItem("STATUS")); // Retrieving
         var i, j, n, x;
 
         /*Jika data gak ada yang di pilih*/
@@ -457,7 +456,7 @@
                                 myHTML += '                                    </div>';
                                 myHTML += '                                    <div class="row" id="btnTable" >';
                                 myHTML += '                                        <div class="col-lg-3 col-lg-offset-9" style="text-align:right">';
-                                myHTML += '                                            <button type="button" class="btn btn-danger" id="mutasi" onClick="submitMutasi('+i+')">Submit</button>';
+                                myHTML += '                                            <button type="button" class="btn btn-primary" id="mutasi" onClick="submitMutasi('+i+')">Submit</button>';
                                 myHTML += '                                        </div>';
                                 myHTML += '                                    </div>';
                                 myHTML += '                                </div>';

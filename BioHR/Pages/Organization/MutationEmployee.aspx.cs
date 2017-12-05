@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace BioHR.Pages.Organization
 {
-    public partial class MutationEmployee : System.Web.UI.Page
+    public partial class MutationEmployee : BioHR.Controller.BasePage
     {
 
         DataTable dtblContractDetailByNoSK = new DataTable();
