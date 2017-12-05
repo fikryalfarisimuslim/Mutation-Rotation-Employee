@@ -1,0 +1,161 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="FormPageHorizontal.master.cs" Inherits="BioHR.MasterPages.FormPageHorizontal" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head runat="server">
+        <title></title>
+
+        <%--Bootstrap CSS File--%>
+        <link rel="stylesheet" href="~/CSS/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/CSS/bootstrap-reset.css" />
+        <%--External CSS File --%>
+        <link rel="stylesheet" href="~/Assets/font-awesome/css/font-awesome.css" />
+
+        <%--Specific Page CSS File--%>
+        <link rel="stylesheet" type="text/css" href="~/Assets/bootstrap-datepicker/css/datepicker.css"/>
+        <link rel="stylesheet" type="text/css" href="~/Assets/bootstrap-timepicker2/css/bootstrap-timepicker.min.css"/>
+
+        <asp:ContentPlaceHolder ID="cpHead" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <%--Custom CSS styles for this Web Application--%>
+        <link rel="stylesheet" href="~/CSS/style.css" />
+        <link rel="stylesheet" href="~/CSS/style-responsive.css" />
+    </head>
+    <body>
+        <form id="form1" runat="server" class="full-width">
+            <section id="container">
+                <%--HEADER START--%>
+                <header class="header white-bg">
+                    <%--TOGGLE BOX START--%>
+                    <%--<div class="sidebar-toggle-box">
+                        <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
+                    </div>--%>
+                    <%--TOGGLE BOX END--%>
+                    <%--Page Logo--%>
+                    <a href="javascript:;" class="logo">BIO<span>HR</span></a>
+                    <%--NOTIFICATION BAR START--%>
+
+                    <%--NOTIFICATION BAR END--%>
+                    
+                    <%--HORIZONTAL MENU START--%>
+                    <div class="horizontal-menu nav-collapse collapse">
+                        <ul class="nav navbar-nav" id="navTop" runat="server">
+                            <!-- Generated Menu Here -->
+                        </ul>
+                    </div>
+                    <%--HORIZONTAL MENU END--%>
+                    
+                    <%--LOGIN BAR START--%>
+                    <div class="top-nav">
+                        <%--SEARCH AND USER INFO START--%>
+                        <ul class="nav pull-right top-menu">
+                            <%--Search Bar--%>
+                            <li>
+                                <input type="text" class="form-control search" placeholder="Search" />
+                            </li>
+                            <%--Search Bar End--%>
+                            <%--USER LOGIN DROPDOWN START--%>
+                            <li class="dropdown">
+                                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                    <%--<img alt="" src="Images/avatarAwwal-small.jpg" />--%>
+                                    <img alt="" src='<%: ResolveClientUrl("~/Images/avatar-mini.png") %>' />
+                                    <%--<span class="username">Awwal Mulyana</span>--%>
+                                    <asp:Label ID="lbUserName" runat="server" Text="Guest"></asp:Label>
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu extended logout">
+                                    <li><a href="#"><i class=" icon-suitcase"></i>Profile</a></li>
+                                    <li><a href="#"><i class="icon-cog"></i>Settings</a></li>
+                                    <li><a href="#"><i class="icon-bell-alt"></i>Notification</a></li>
+                                    <li>
+                                        <asp:HyperLink NavigateUrl="~/Login.aspx" runat="server"><i class="icon-key"></i>Log Out</asp:HyperLink></li>
+                                </ul>
+                            </li>
+                            <!-- USER LOGIN DROPDOWN END -->
+                        </ul>
+                        <!-- SEARCH AND USER INFO END -->
+                    </div>
+                    <%--LOGIN BAR END--%>
+                </header>
+                <%--HEADER END--%>
+                <%--SIDEBAR START--%>
+                <!-- FOR HORIZONTAL MENU THERE IS no <aside></aside> -->
+                <%--<aside>
+                    <div id="sidebar" class="nav-collapse">
+                        <ul class="sidebar-menu" id="navAccordion" runat="server">
+                            <li>
+                                <a class="active" href="index.html">
+                                    <i class="icon-dashboard"></i>
+                                    <span>Dashboard</span>
+                                </a>
+                            </li>
+                            
+                            <li class="sub-menu">
+                                <a href="javascript:;" >
+                                    <i class="icon-laptop"></i>
+                                    <span>Cuti</span>
+                                    <!-- <span class="label label-danger pull-right mail-info">20</span> -->
+                                </a>
+                                <ul class="sub">
+                                    <li><a href="/Pages/Leave/EmployeeLeaveParameter.aspx">Parameter Cuti</a></li>
+                                    <li><a href="/Pages/Leave/EmployeeLeaveQuota.aspx">Quota Cuti</a></li>
+                                    <li><a href="/Pages/Leave/EmployeeLeaveTransaction.aspx">Transaksi Cuti</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>--%>
+                <!-- FOR HORIZONTAL MENU THERE IS no <aside></aside> -->
+                <%--SIDEBAR END--%>
+                <%--MAINCONTENT START--%>
+                <section id="main-content">
+                    <section class="wrapper site-min-height">
+                        <%--PAGE CONTENT START--%>
+                        <asp:ContentPlaceHolder ID="cpMainContent" runat="server">
+                            Page Content Goes Here
+                        </asp:ContentPlaceHolder>
+                        <%--PAGE CONTENT END--%>
+                    </section>
+                </section>
+                <%--MAINCONTENT END--%>
+                <%--FOOTER START--%>
+                <footer class="site-footer">
+                    <div class="text-center">
+                        &copy; Copyright 2014 BioFarma IT Division.
+                        <a href="#" class="go-top"><i class="icon-angle-up"></i></a>
+                    </div>
+                </footer>
+                <%--FOOTER END--%>
+            </section>
+        </form>
+
+        <%--JavaScript File (Put in the end of document in order to make the pages load faster)--%>
+        <%--Common JavaScript Library--%>
+        <script src='<%: ResolveClientUrl("~/JS/jquery.js") %>'></script>
+        <script src='<%: ResolveClientUrl("~/JS/bootstrap.min.js") %>'></script>
+        <script src='<%: ResolveClientUrl("~/JS/jquery.dcjqaccordion.2.7.js") %>'></script>
+        <script src='<%: ResolveClientUrl("~/JS/hover-dropdown.js") %>'></script>
+        <script src='<%: ResolveClientUrl("~/JS/jquery.scrollTo.min.js") %>'></script>
+        <script src='<%: ResolveClientUrl("~/JS/jquery.nicescroll.js") %>'></script>
+        <script src='<%: ResolveClientUrl("~/JS/respond.min.js") %>'></script>
+        
+        <script src='<%: ResolveClientUrl("~/Assets/bootstrap-datepicker/js/bootstrap-datepicker.js") %>' type="text/javascript"></script>    
+        <script src='<%: ResolveClientUrl("~/Assets/bootstrap-timepicker2/js/bootstrap-timepicker.js") %>' type="text/javascript"></script>
+        <script src='<%: ResolveClientUrl("~/Assets/bootstrap-inputmask/bootstrap-inputmask.min.js") %>' type="text/javascript"></script>
+
+        <%--Specific Page JavaScript Library File--%>
+        <asp:ContentPlaceHolder ID="cpScriptLibContent" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <%--Common JavaScript File for All Pages--%>
+        <script src='<%: ResolveClientUrl("~/JS/common-scripts.js") %>'></script>
+        <%--Specific Page JavaScript File--%>
+        <script src='<%: ResolveClientUrl("~/JS/advanced-form-components.js") %>' type="text/javascript"></script>
+
+        <%--Specific Page JavaScript File--%>
+        <asp:ContentPlaceHolder ID="cpScriptContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </body>
+</html>

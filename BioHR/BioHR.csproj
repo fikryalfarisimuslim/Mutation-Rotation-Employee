@@ -1,0 +1,725 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4A61F60A-3F78-4959-9931-BA52C171248A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BioHR</RootNamespace>
+    <AssemblyName>BioHR</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Biofarma Project's\01-Development Phase\BioHR\BioHR\BioHR\bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\bootstrap-datepicker\.DS_Store" />
+    <Content Include="Assets\bootstrap-datepicker\less\datepicker.less" />
+    <Content Include="Assets\bootstrap-timepicker\.gitignore" />
+    <Content Include="Assets\bootstrap-timepicker\less\timepicker.less" />
+    <Content Include="Assets\bootstrap-timepicker\README.md" />
+    <Content Include="Assets\chosen\less\bootstrap-chosen-variables.less" />
+    <Content Include="Assets\chosen\less\bootstrap-chosen.less" />
+    <Content Include="Assets\DataTables\DT\images\Sorting icons.psd" />
+    <Content Include="Assets\DataTables\Responsive\css\dataTables.responsive.scss" />
+    <Content Include="Assets\dropzone\.DS_Store" />
+    <Content Include="Assets\dropzone\css\.DS_Store" />
+    <Content Include="Assets\dropzone\css\stylus\basic.styl" />
+    <Content Include="Assets\dropzone\css\stylus\dropzone.styl" />
+    <Content Include="Assets\dropzone\upload.php" />
+    <Content Include="Assets\eyecon-datepicker\less\datepicker.less" />
+    <Content Include="Assets\font-awesome\.DS_Store" />
+    <Content Include="Assets\font-awesome\font\cloud-admin\fontawesome-webfont.eot" />
+    <Content Include="Assets\font-awesome\font\cloud-admin\fontawesome-webfont.ttf" />
+    <Content Include="Assets\font-awesome\font\cloud-admin\fontawesome-webfont.woff" />
+    <Content Include="Assets\font-awesome\font\cloud-admin\FontAwesome.otf" />
+    <Content Include="Assets\font-awesome\font\fontawesome-webfont.eot" />
+    <Content Include="Assets\font-awesome\font\fontawesome-webfont.ttf" />
+    <Content Include="Assets\font-awesome\font\fontawesome-webfont.woff" />
+    <Content Include="Assets\font-awesome\font\FontAwesome.otf" />
+    <Content Include="Assets\font-awesome\less\bootstrap.less" />
+    <Content Include="Assets\font-awesome\less\core.less" />
+    <Content Include="Assets\font-awesome\less\extras.less" />
+    <Content Include="Assets\font-awesome\less\font-awesome-ie7.less" />
+    <Content Include="Assets\font-awesome\less\font-awesome.less" />
+    <Content Include="Assets\font-awesome\less\icons.less" />
+    <Content Include="Assets\font-awesome\less\mixins.less" />
+    <Content Include="Assets\font-awesome\less\path.less" />
+    <Content Include="Assets\font-awesome\less\variables.less" />
+    <Content Include="Assets\font-awesome\scss\font-awesome-ie7.scss" />
+    <Content Include="Assets\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Assets\font-awesome\scss\_bootstrap.scss" />
+    <Content Include="Assets\font-awesome\scss\_core.scss" />
+    <Content Include="Assets\font-awesome\scss\_extras.scss" />
+    <Content Include="Assets\font-awesome\scss\_icons.scss" />
+    <Content Include="Assets\font-awesome\scss\_mixins.scss" />
+    <Content Include="Assets\font-awesome\scss\_path.scss" />
+    <Content Include="Assets\font-awesome\scss\_variables.scss" />
+    <Content Include="Assets\Fonts\Open_Sans\OpenSans-Bold.ttf" />
+    <Content Include="Assets\Fonts\Open_Sans\OpenSans-BoldItalic.ttf" />
+    <Content Include="Assets\Fonts\Open_Sans\OpenSans-ExtraBold.ttf" />
+    <Content Include="Assets\Fonts\Open_Sans\OpenSans-ExtraBoldItalic.ttf" />
+    <Content Include="Assets\Fonts\Open_Sans\OpenSans-Italic.ttf" />
+    <Content Include="Assets\Fonts\Open_Sans\OpenSans-Light.ttf" />
+    <Content Include="Assets\Fonts\Open_Sans\OpenSans-LightItalic.ttf" />
+    <Content Include="Assets\Fonts\Open_Sans\OpenSans-Regular.ttf" />
+    <Content Include="Assets\Fonts\Open_Sans\OpenSans-Semibold.ttf" />
+    <Content Include="Assets\Fonts\Open_Sans\OpenSans-SemiboldItalic.ttf" />
+    <Content Include="Assets\jcrop\crop-demo.php" />
+    <Content Include="Assets\jcrop\demos\crop.php" />
+    <Content Include="Assets\jcrop\README.md" />
+    <Content Include="Assets\morris.js-0.4.3\.DS_Store" />
+    <Content Include="Assets\morris.js-0.4.3\.gitignore" />
+    <Content Include="Assets\morris.js-0.4.3\.travis.yml" />
+    <Content Include="Assets\morris.js-0.4.3\component.json" />
+    <Content Include="Assets\morris.js-0.4.3\examples\.DS_Store" />
+    <Content Include="Assets\morris.js-0.4.3\less\morris.core.less" />
+    <Content Include="Assets\morris.js-0.4.3\lib\morris.area.coffee" />
+    <Content Include="Assets\morris.js-0.4.3\lib\morris.bar.coffee" />
+    <Content Include="Assets\morris.js-0.4.3\lib\morris.coffee" />
+    <Content Include="Assets\morris.js-0.4.3\lib\morris.donut.coffee" />
+    <Content Include="Assets\morris.js-0.4.3\lib\morris.grid.coffee" />
+    <Content Include="Assets\morris.js-0.4.3\lib\morris.hover.coffee" />
+    <Content Include="Assets\morris.js-0.4.3\lib\morris.line.coffee" />
+    <Content Include="Assets\morris.js-0.4.3\package.json" />
+    <Content Include="Assets\morris.js-0.4.3\README.md" />
+    <Content Include="Assets\morris.js-0.4.3\spec\.DS_Store" />
+    <Content Include="Assets\morris.js-0.4.3\spec\lib\.DS_Store" />
+    <Content Include="Assets\morris.js-0.4.3\spec\lib\area\area_spec.coffee" />
+    <Content Include="Assets\morris.js-0.4.3\spec\lib\bar\bar_spec.coffee" />
+    <Content Include="Assets\morris.js-0.4.3\spec\lib\bar\colours.coffee" />
+    <Content Include="Assets\morris.js-0.4.3\spec\lib\commas_spec.coffee" />
+    <Content Include="Assets\morris.js-0.4.3\spec\lib\donut\donut_spec.coffee" />
+    <Content Include="Assets\morris.js-0.4.3\spec\lib\grid\auto_grid_lines_spec.coffee" />
+    <Content Include="Assets\morris.js-0.4.3\spec\lib\grid\set_data_spec.coffee" />
+    <Content Include="Assets\morris.js-0.4.3\spec\lib\grid\y_label_format_spec.coffee" />
+    <Content Include="Assets\morris.js-0.4.3\spec\lib\hover_spec.coffee" />
+    <Content Include="Assets\morris.js-0.4.3\spec\lib\label_series_spec.coffee" />
+    <Content Include="Assets\morris.js-0.4.3\spec\lib\line\line_spec.coffee" />
+    <Content Include="Assets\morris.js-0.4.3\spec\lib\pad_spec.coffee" />
+    <Content Include="Assets\morris.js-0.4.3\spec\lib\parse_time_spec.coffee" />
+    <Content Include="Assets\morris.js-0.4.3\spec\support\placeholder.coffee" />
+    <Content Include="CSS\DatePicker\daterangepicker.css" />
+    <Content Include="Files\Kuota Cuti.xlsx" />
+    <Content Include="Images\Resources\state-false.png" />
+    <Content Include="Images\Resources\state-true.png" />
+    <Content Include="JS\DatePicker\advanced-form-components.js" />
+    <Content Include="JS\DatePicker\daterangepicker.js" />
+    <Content Include="JS\DatePicker\moment.js" />
+    <Content Include="JS\TableScript\data-tables\.DS_Store" />
+    <Content Include="MasterPages\BackEnd.Master" />
+    <Content Include="MasterPages\BackEndHorizontal.Master" />
+    <Content Include="MasterPages\FormPage.Master" />
+    <Content Include="MasterPages\FormPageHorizontal.Master" />
+    <Content Include="MasterPages\FormPages.Master" />
+    <Content Include="MasterPages\FormPagesHorizontal.Master" />
+    <Content Include="Pages\MachineAttendance\AddMachineAttendance.aspx" />
+    <Content Include="Pages\MachineAttendance\ConfigMachineAttendance.aspx" />
+    <Content Include="Pages\MachineAttendance\EditMachineAttendance.aspx" />
+    <Content Include="Pages\MachineAttendance\LogMachineAttendance.aspx" />
+    <Content Include="Pages\MachineAttendance\WithdrawalMachineAttendance.aspx" />
+    <Content Include="Pages\Organization\ListOfEmployee.aspx" />
+    <Content Include="Pages\Organization\LogOfEmployee.aspx" />
+    <Content Include="Pages\Organization\MutationEmployee.aspx" />
+    <Content Include="Pages\Organization\RotationEmployee.aspx" />
+    <Content Include="Uploads\Pos Timur_20150921_073207.log" />
+    <Content Include="Upload.ashx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\awesome-bootstrap-checkbox\awesome-bootstrap-checkbox.css" />
+    <Content Include="Assets\bootstrap-datepicker\css\datepicker.css" />
+    <Content Include="Assets\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Assets\bootstrap-inputmask\bootstrap-inputmask.js" />
+    <Content Include="Assets\bootstrap-inputmask\bootstrap-inputmask.min.js" />
+    <Content Include="Assets\bootstrap-timepicker2\css\bootstrap-responsive.css" />
+    <Content Include="Assets\bootstrap-timepicker2\css\bootstrap-timepicker.css" />
+    <Content Include="Assets\bootstrap-timepicker2\css\bootstrap-timepicker.min.css" />
+    <Content Include="Assets\bootstrap-timepicker2\js\bootstrap-timepicker.js" />
+    <Content Include="Assets\bootstrap-timepicker2\js\bootstrap-timepicker.min.js" />
+    <Content Include="Assets\bootstrap-timepicker\compiled\timepicker.css" />
+    <Content Include="Assets\bootstrap-timepicker\js\bootstrap-timepicker.js" />
+    <Content Include="Assets\bootstrapvalidator\css\bootstrapValidator.css" />
+    <Content Include="Assets\bootstrapvalidator\css\bootstrapValidator.min.css" />
+    <Content Include="Assets\bootstrapvalidator\js\bootstrapValidator.js" />
+    <Content Include="Assets\bootstrapvalidator\js\bootstrapValidator.min.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\ar_MA.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\be_FR.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\be_NL.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\bg_BG.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\cs_CZ.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\da_DK.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\de_DE.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\en_US.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\es_CL.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\es_ES.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\fa_IR.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\fr_FR.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\gr_EL.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\he_IL.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\hu_HU.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\id_ID.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\it_IT.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\ja_JP.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\nl_NL.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\no_NO.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\pl_PL.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\pt_BR.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\pt_PT.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\ro_RO.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\ru_RU.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\sq_AL.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\sr_RS.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\sv_SE.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\th_TH.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\tr_TR.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\ua_UA.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\vi_VN.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\zh_CN.js" />
+    <Content Include="Assets\bootstrapvalidator\js\language\zh_TW.js" />
+    <Content Include="Assets\chosen\css\chosen.bootstrap.css" />
+    <Content Include="Assets\chosen\css\chosen.css" />
+    <Content Include="Assets\chosen\images\chosen-sprite%402x.png" />
+    <Content Include="Assets\chosen\images\chosen-sprite.png" />
+    <Content Include="Assets\chosen\js\chosen.jquery.js" />
+    <Content Include="Assets\DataTables\DT\css\jquery.dataTables.css" />
+    <Content Include="Assets\DataTables\DT\css\jquery.dataTables.min.css" />
+    <Content Include="Assets\DataTables\DT\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Assets\DataTables\DT\images\back_disabled.png" />
+    <Content Include="Assets\DataTables\DT\images\back_enabled.png" />
+    <Content Include="Assets\DataTables\DT\images\back_enabled_hover.png" />
+    <Content Include="Assets\DataTables\DT\images\favicon.ico" />
+    <Content Include="Assets\DataTables\DT\images\forward_disabled.png" />
+    <Content Include="Assets\DataTables\DT\images\forward_enabled.png" />
+    <Content Include="Assets\DataTables\DT\images\forward_enabled_hover.png" />
+    <Content Include="Assets\DataTables\DT\images\sort_asc.png" />
+    <Content Include="Assets\DataTables\DT\images\sort_asc_disabled.png" />
+    <Content Include="Assets\DataTables\DT\images\sort_both.png" />
+    <Content Include="Assets\DataTables\DT\images\sort_desc.png" />
+    <Content Include="Assets\DataTables\DT\images\sort_desc_disabled.png" />
+    <Content Include="Assets\DataTables\DT\js\jquery.dataTables.js" />
+    <Content Include="Assets\DataTables\DT\js\jquery.dataTables.min.js" />
+    <Content Include="Assets\DataTables\DT\js\jquery.js" />
+    <Content Include="Assets\DataTables\Responsive\css\dataTables.responsive.css" />
+    <Content Include="Assets\DataTables\Responsive\js\dataTables.responsive.js" />
+    <Content Include="Assets\DataTables\Responsive\js\dataTables.responsive.min.js" />
+    <Content Include="Assets\dropzone\css\basic.css" />
+    <Content Include="Assets\dropzone\css\dropzone.css" />
+    <Content Include="Assets\dropzone\dropzone-amd-module.js" />
+    <Content Include="Assets\dropzone\dropzone.js" />
+    <Content Include="Assets\dropzone\images\spritemap%402x.png" />
+    <Content Include="Assets\dropzone\images\spritemap.png" />
+    <Content Include="Assets\eyecon-datepicker\css\datepicker.css" />
+    <Content Include="Assets\eyecon-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Assets\font-awesome\css\font-awesome-ie7.css" />
+    <Content Include="Assets\font-awesome\css\font-awesome-ie7.min.css" />
+    <Content Include="Assets\font-awesome\css\font-awesome.css" />
+    <Content Include="Assets\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Assets\font-awesome\font\fontawesome-webfont.svg" />
+    <Content Include="Assets\Fonts\Open_Sans\LICENSE.txt" />
+    <Content Include="Assets\Fonts\Typography.css" />
+    <Content Include="Assets\fuelux\spinner.min.js" />
+    <Content Include="Assets\jcrop\css\Jcrop.gif" />
+    <Content Include="Assets\jcrop\css\jquery.Jcrop.css" />
+    <Content Include="Assets\jcrop\css\jquery.Jcrop.min.css" />
+    <Content Include="Assets\jcrop\demos\demo_files\demos.css" />
+    <Content Include="Assets\jcrop\demos\demo_files\image1.jpg" />
+    <Content Include="Assets\jcrop\demos\demo_files\image2.jpg" />
+    <Content Include="Assets\jcrop\demos\demo_files\image3.jpg" />
+    <Content Include="Assets\jcrop\demos\demo_files\image4.jpg" />
+    <Content Include="Assets\jcrop\demos\demo_files\image5.jpg" />
+    <Content Include="Assets\jcrop\demos\demo_files\main.css" />
+    <Content Include="Assets\jcrop\demos\demo_files\pool.jpg" />
+    <Content Include="Assets\jcrop\demos\demo_files\sago.jpg" />
+    <Content Include="Assets\jcrop\demos\demo_files\sagomod.jpg" />
+    <Content Include="Assets\jcrop\demos\demo_files\sagomod.png" />
+    <Content Include="Assets\jcrop\demos\non-image.html" />
+    <Content Include="Assets\jcrop\demos\styling.html" />
+    <Content Include="Assets\jcrop\demos\tutorial1.html" />
+    <Content Include="Assets\jcrop\demos\tutorial2.html" />
+    <Content Include="Assets\jcrop\demos\tutorial3.html" />
+    <Content Include="Assets\jcrop\demos\tutorial4.html" />
+    <Content Include="Assets\jcrop\demos\tutorial5.html" />
+    <Content Include="Assets\jcrop\index.html" />
+    <Content Include="Assets\jcrop\js\jquery.color.js" />
+    <Content Include="Assets\jcrop\js\jquery.Jcrop.js" />
+    <Content Include="Assets\jcrop\js\jquery.Jcrop.min.js" />
+    <Content Include="Assets\jcrop\js\jquery.min.js" />
+    <Content Include="Assets\jcrop\MIT-LICENSE.txt" />
+    <Content Include="Assets\maskMoney\jquery.maskMoney.js" />
+    <Content Include="Assets\morris.js-0.4.3\examples\area-as-line.html" />
+    <Content Include="Assets\morris.js-0.4.3\examples\area.html" />
+    <Content Include="Assets\morris.js-0.4.3\examples\bar-colors.html" />
+    <Content Include="Assets\morris.js-0.4.3\examples\bar-no-axes.html" />
+    <Content Include="Assets\morris.js-0.4.3\examples\bar.html" />
+    <Content Include="Assets\morris.js-0.4.3\examples\days.html" />
+    <Content Include="Assets\morris.js-0.4.3\examples\decimal-custom-hover.html" />
+    <Content Include="Assets\morris.js-0.4.3\examples\diagonal-xlabels-bar.html" />
+    <Content Include="Assets\morris.js-0.4.3\examples\diagonal-xlabels.html" />
+    <Content Include="Assets\morris.js-0.4.3\examples\donut-colors.html" />
+    <Content Include="Assets\morris.js-0.4.3\examples\donut-formatter.html" />
+    <Content Include="Assets\morris.js-0.4.3\examples\donut.html" />
+    <Content Include="Assets\morris.js-0.4.3\examples\dst.html" />
+    <Content Include="Assets\morris.js-0.4.3\examples\events.html" />
+    <Content Include="Assets\morris.js-0.4.3\examples\goals.html" />
+    <Content Include="Assets\morris.js-0.4.3\examples\lib\example.css" />
+    <Content Include="Assets\morris.js-0.4.3\examples\lib\example.js" />
+    <Content Include="Assets\morris.js-0.4.3\examples\lib\prettify.css" />
+    <Content Include="Assets\morris.js-0.4.3\examples\lib\prettify.js" />
+    <Content Include="Assets\morris.js-0.4.3\examples\months-no-smooth.html" />
+    <Content Include="Assets\morris.js-0.4.3\examples\negative.html" />
+    <Content Include="Assets\morris.js-0.4.3\examples\no-grid.html" />
+    <Content Include="Assets\morris.js-0.4.3\examples\non-continuous.html" />
+    <Content Include="Assets\morris.js-0.4.3\examples\non-date.html" />
+    <Content Include="Assets\morris.js-0.4.3\examples\quarters.html" />
+    <Content Include="Assets\morris.js-0.4.3\examples\stacked_bars.html" />
+    <Content Include="Assets\morris.js-0.4.3\examples\timestamps.html" />
+    <Content Include="Assets\morris.js-0.4.3\examples\updating.html" />
+    <Content Include="Assets\morris.js-0.4.3\examples\weeks.html" />
+    <Content Include="Assets\morris.js-0.4.3\examples\years.html" />
+    <Content Include="Assets\morris.js-0.4.3\examples\_template.html" />
+    <Content Include="Assets\morris.js-0.4.3\grunt.js" />
+    <Content Include="Assets\morris.js-0.4.3\morris.css" />
+    <Content Include="Assets\morris.js-0.4.3\morris.js" />
+    <Content Include="Assets\morris.js-0.4.3\morris.min.js" />
+    <Content Include="Assets\morris.js-0.4.3\raphael-min.js" />
+    <Content Include="Assets\morris.js-0.4.3\spec\specs.html" />
+    <Content Include="Assets\morris.js-0.4.3\spec\vendor\chai-1.3.0.js" />
+    <Content Include="Assets\morris.js-0.4.3\spec\vendor\chai-jquery-1.1.0.js" />
+    <Content Include="Assets\morris.js-0.4.3\spec\vendor\jquery-1.8.2.min.js" />
+    <Content Include="Assets\morris.js-0.4.3\spec\vendor\mocha-1.6.0.css" />
+    <Content Include="Assets\morris.js-0.4.3\spec\vendor\mocha-1.6.0.js" />
+    <Content Include="Assets\morris.js-0.4.3\spec\vendor\raphael-2.1.0.min.js" />
+    <Content Include="Assets\morris.js-0.4.3\spec\vendor\sinon-1.5.0.js" />
+    <Content Include="Assets\morris.js-0.4.3\spec\vendor\sinon-chai-2.1.2.js" />
+    <Content Include="Assets\sweetalert2\sweetalert2.css" />
+    <Content Include="Assets\sweetalert2\sweetalert2.js" />
+    <Content Include="Assets\sweetalert2\sweetalert2.min.css" />
+    <Content Include="Assets\sweetalert2\sweetalert2.min.js" />
+    <Content Include="Assets\uploadify\jquery.uploadify.js" />
+    <Content Include="Assets\uploadify\jquery.uploadify.min.js" />
+    <Content Include="Assets\uploadify\uploadify-cancel.png" />
+    <Content Include="Assets\uploadify\uploadify.css" />
+    <Content Include="Assets\uploadify\uploadify.swf" />
+    <Content Include="CSS\bootstrap-reset.css" />
+    <Content Include="CSS\bootstrap.min.css" />
+    <Content Include="CSS\chosen\chosen-sprite%402x.png" />
+    <Content Include="CSS\chosen\chosen-sprite.png" />
+    <Content Include="CSS\chosen\chosen.css" />
+    <Content Include="CSS\ContentPage\jquery.nestable.css" />
+    <Content Include="CSS\dataTables\datatables.min.css" />
+    <Content Include="CSS\image-crop.css" />
+    <Content Include="CSS\LoginStyle\bootstrap.min.css" />
+    <Content Include="CSS\LoginStyle\ca-style.css" />
+    <Content Include="CSS\LoginStyle\ca-style_default.css" />
+    <Content Include="CSS\LoginStyle\ca-style_responsive.css" />
+    <Content Include="CSS\style-old.css" />
+    <Content Include="CSS\style-responsive.css" />
+    <Content Include="CSS\style.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Images\avatar-mini.png" />
+    <Content Include="Images\avatarAwwal-small.jpg" />
+    <Content Include="Images\checkbox\check-off.png" />
+    <Content Include="Images\checkbox\check-on.png" />
+    <Content Include="Images\checkbox\radio-off.png" />
+    <Content Include="Images\checkbox\radio-on.png" />
+    <Content Include="Images\Company\logobf.png" />
+    <Content Include="Images\Company\logobfReport.png" />
+    <Content Include="Images\Employee.jpg" />
+    <Content Include="Images\Employee2-Big.jpg" />
+    <Content Include="Images\Employee2.jpg" />
+    <Content Include="Images\Happy-employees.jpg" />
+    <Content Include="Images\Login\ca-bio-logo-small.png" />
+    <Content Include="Images\Login\ca-bio-logo.png" />
+    <Content Include="Images\Login\ca-body-bg.png" />
+    <Content Include="Images\Login\ca-header-logo-mobile.png" />
+    <Content Include="Images\Login\ca-header-logo.png" />
+    <Content Include="Images\Login\ca-login-btn.jpg" />
+    <Content Include="Images\Login\ca-top-bg.jpg" />
+    <Content Include="Images\Resources\20-minus_sign.png" />
+    <Content Include="Images\Resources\20-plus_sign.png" />
+    <Content Include="Images\Resources\edit-16.png" />
+    <Content Include="Images\Resources\loadingDna.GIF" />
+    <Content Include="Images\Resources\loadingVirus.GIF" />
+    <Content Include="Images\Resources\nav-expand.png" />
+    <Content Include="Images\Resources\new.png" />
+    <Content Include="Images\Resources\search-icon.jpg" />
+    <Content Include="Images\Resources\trash.png" />
+    <Content Include="JS\advanced-form-components.js" />
+    <Content Include="JS\bootstrap.min.js" />
+    <Content Include="JS\chosen\chosen.jquery.js" />
+    <Content Include="JS\chosen\chosen.jquery.min.js" />
+    <Content Include="JS\chosen\chosen.order.jquery.min.js" />
+    <Content Include="JS\chosen\Chosen1.1.jquery.js" />
+    <Content Include="JS\chosen\chosen1.5.1.jquery.js" />
+    <Content Include="JS\common-scripts.js" />
+    <Content Include="JS\ContentPage\jquery.nestable.js" />
+    <Content Include="JS\ContentPage\jquery.stepy.js" />
+    <Content Include="JS\Dashboard\count.js" />
+    <Content Include="JS\Dashboard\jquery.sparkline.js" />
+    <Content Include="JS\Dashboard\sparkline-chart.js" />
+    <Content Include="JS\DataTables.js" />
+    <Content Include="JS\dataTables\datatables.min.js" />
+    <Content Include="JS\DataTable\DataTables-Approval.js" />
+    <Content Include="JS\DataTable\DataTables-ApprovalList.js" />
+    <Content Include="JS\DataTable\DataTables-ContractList.js" />
+    <Content Include="JS\DataTable\DataTables-DocumentRequest.js" />
+    <Content Include="JS\DataTable\DataTables-DraftManualAbsence.js" />
+    <Content Include="JS\DataTable\DataTables-DraftPermission.js" />
+    <Content Include="JS\DataTable\DataTables-GeneralTable.js" />
+    <Content Include="JS\DataTable\DataTables-Karyawan.js" />
+    <Content Include="JS\DataTable\DataTables-OvertimeList.js" />
+    <Content Include="JS\DataTable\DataTables-Presence.js" />
+    <Content Include="JS\date-id-ID.js" />
+    <Content Include="JS\dropdown-menu.js" />
+    <Content Include="JS\form-component.js" />
+    <Content Include="JS\form-image-crop.js" />
+    <Content Include="JS\hover-dropdown.js" />
+    <Content Include="JS\jquery.dcjqaccordion.2.7.js" />
+    <Content Include="JS\jquery.js" />
+    <Content Include="JS\jquery.nicescroll.js" />
+    <Content Include="JS\jquery.scrollTo.min.js" />
+    <Content Include="JS\jquery.stepy.js" />
+    <Content Include="JS\LoginScript\jquery-1.8.3.min.js" />
+    <Content Include="JS\LoginScript\jquery.blockui.js" />
+    <Content Include="JS\LoginScript\LoginScripts.js" />
+    <Content Include="JS\morris-script.js" />
+    <Content Include="JS\nestable.js" />
+    <Content Include="JS\respond.min.js" />
+    <Content Include="JS\TableScript\data-tables\DT_bootstrap.css" />
+    <Content Include="JS\TableScript\data-tables\DT_bootstrap.js" />
+    <Content Include="JS\TableScript\data-tables\images\sort_asc.png" />
+    <Content Include="JS\TableScript\data-tables\images\sort_both.png" />
+    <Content Include="JS\TableScript\data-tables\images\sort_desc.png" />
+    <Content Include="JS\TableScript\data-tables\jquery.dataTables.js" />
+    <Content Include="JS\TravelChanges.js" />
+    <Content Include="JS\Validators\TravelChangesValidator.js" />
+    <Content Include="JS\Validator\EmployeeHiringStepyValidator.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="MasterControl\DocumentsFormView.ascx" />
+    <Content Include="Pages\Approval\RequestApprovalList.aspx" />
+    <Content Include="Pages\MachineAttendance\EmployeeAttendanceLogMachine.aspx" />
+    <Content Include="Pages\TimeAdministration\AttendanceLogRetrieval.aspx" />
+    <Content Include="Pages\TimeAdministration\UploadAttandanceMachine.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controller\Database\DatabaseSql.cs" />
+    <Compile Include="Controller\Database\MailCatalog.cs" />
+    <Compile Include="Controller\Database\MenuCatalog.cs" />
+    <Compile Include="Controller\Database\OrganizationCatalog.cs" />
+    <Compile Include="Controller\Database\UserCatalog.cs" />
+    <Compile Include="Controller\Function\ActiveDirectoryManager.cs" />
+    <Compile Include="Controller\Function\BreadCrumbGenerator.cs" />
+    <Compile Include="Controller\Function\CryptographFactory.cs" />
+    <Compile Include="Controller\Function\DateTimeReferences.cs" />
+    <Compile Include="Controller\Function\MailManager.cs" />
+    <Compile Include="Controller\Function\MenuGenerator.cs" />
+    <Compile Include="Controller\Function\NominalCurrencyReference.cs" />
+    <Compile Include="Controller\Function\OrganizationGenerator.cs" />
+    <Compile Include="Controller\Helper\ITreeNode.cs" />
+    <Compile Include="Controller\Services\AccessActiveDirectory.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterControl\DocumentsFormView.ascx.cs">
+      <DependentUpon>DocumentsFormView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterControl\DocumentsFormView.ascx.designer.cs">
+      <DependentUpon>DocumentsFormView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\BackEnd.Master.cs">
+      <DependentUpon>BackEnd.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\BackEnd.Master.designer.cs">
+      <DependentUpon>BackEnd.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\BackEndHorizontal.Master.cs">
+      <DependentUpon>BackEndHorizontal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\BackEndHorizontal.Master.designer.cs">
+      <DependentUpon>BackEndHorizontal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\FormPage.Master.cs">
+      <DependentUpon>FormPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\FormPage.Master.designer.cs">
+      <DependentUpon>FormPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\FormPageHorizontal.Master.cs">
+      <DependentUpon>FormPageHorizontal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\FormPageHorizontal.Master.designer.cs">
+      <DependentUpon>FormPageHorizontal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\FormPages.Master.cs">
+      <DependentUpon>FormPages.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\FormPages.Master.designer.cs">
+      <DependentUpon>FormPages.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\FormPagesHorizontal.Master.cs">
+      <DependentUpon>FormPagesHorizontal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\FormPagesHorizontal.Master.designer.cs">
+      <DependentUpon>FormPagesHorizontal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Database\ApplicationDataCatalog.cs" />
+    <Compile Include="Model\Database\MachineProcessDataCatalog.cs" />
+    <Compile Include="Model\Database\OrganizationDataCatalog.cs" />
+    <Compile Include="Model\Dictionary\Enum.cs" />
+    <Compile Include="Model\Function\ApplicationXmlGenerator.cs" />
+    <Compile Include="Model\Function\EmployeeListConstructor.cs" />
+    <Compile Include="Model\Function\PresenceListCatalog.cs" />
+    <Compile Include="Model\Object\Employee.cs" />
+    <Compile Include="Model\Object\Files.cs" />
+    <Compile Include="Model\Object\Mail.cs" />
+    <Compile Include="Model\Object\MaintainObject.cs" />
+    <Compile Include="Model\Object\Menu.cs" />
+    <Compile Include="Model\Object\ObjectLeave.cs" />
+    <Compile Include="Model\Object\Organization.cs" />
+    <Compile Include="Model\Object\OrganizationRelation.cs" />
+    <Compile Include="Model\Object\Presensi.cs" />
+    <Compile Include="Model\Object\User.cs" />
+    <Compile Include="Model\Object\UserAvatar.cs" />
+    <Compile Include="Pages\Approval\RequestApprovalList.aspx.cs">
+      <DependentUpon>RequestApprovalList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Approval\RequestApprovalList.aspx.designer.cs">
+      <DependentUpon>RequestApprovalList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MachineAttendance\AddMachineAttendance.aspx.cs">
+      <DependentUpon>AddMachineAttendance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MachineAttendance\AddMachineAttendance.aspx.designer.cs">
+      <DependentUpon>AddMachineAttendance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MachineAttendance\ConfigMachineAttendance.aspx.cs">
+      <DependentUpon>ConfigMachineAttendance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MachineAttendance\ConfigMachineAttendance.aspx.designer.cs">
+      <DependentUpon>ConfigMachineAttendance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MachineAttendance\EditMachineAttendance.aspx.cs">
+      <DependentUpon>EditMachineAttendance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MachineAttendance\EditMachineAttendance.aspx.designer.cs">
+      <DependentUpon>EditMachineAttendance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MachineAttendance\EmployeeAttendanceLogMachine.aspx.cs">
+      <DependentUpon>EmployeeAttendanceLogMachine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MachineAttendance\EmployeeAttendanceLogMachine.aspx.designer.cs">
+      <DependentUpon>EmployeeAttendanceLogMachine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MachineAttendance\LogMachineAttendance.aspx.cs">
+      <DependentUpon>LogMachineAttendance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MachineAttendance\LogMachineAttendance.aspx.designer.cs">
+      <DependentUpon>LogMachineAttendance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MachineAttendance\WithdrawalMachineAttendance.aspx.cs">
+      <DependentUpon>WithdrawalMachineAttendance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MachineAttendance\WithdrawalMachineAttendance.aspx.designer.cs">
+      <DependentUpon>WithdrawalMachineAttendance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Organization\HtmlDocument.cs" />
+    <Compile Include="Pages\Organization\ListOfEmployee.aspx.cs">
+      <DependentUpon>ListOfEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Organization\ListOfEmployee.aspx.designer.cs">
+      <DependentUpon>ListOfEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Organization\LogOfEmployee.aspx.cs">
+      <DependentUpon>LogOfEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Organization\LogOfEmployee.aspx.designer.cs">
+      <DependentUpon>LogOfEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Organization\MutationEmployee.aspx.cs">
+      <DependentUpon>MutationEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Organization\MutationEmployee.aspx.designer.cs">
+      <DependentUpon>MutationEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Organization\RotationEmployee.aspx.cs">
+      <DependentUpon>RotationEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Organization\RotationEmployee.aspx.designer.cs">
+      <DependentUpon>RotationEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TimeAdministration\AttendanceLogRetrieval.aspx.cs">
+      <DependentUpon>AttendanceLogRetrieval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TimeAdministration\AttendanceLogRetrieval.aspx.designer.cs">
+      <DependentUpon>AttendanceLogRetrieval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TimeAdministration\UploadAttandanceMachine.aspx.cs">
+      <DependentUpon>UploadAttandanceMachine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TimeAdministration\UploadAttandanceMachine.aspx.designer.cs">
+      <DependentUpon>UploadAttandanceMachine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Upload.ashx.cs">
+      <DependentUpon>Upload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Controller\Function\ApproverConstructor.cs" />
+    <Compile Include="Workflow\Controller\Function\XmlGenerator.cs" />
+    <Compile Include="Workflow\Model\Database\WorkflowApproval.cs" />
+    <Compile Include="Workflow\Model\Object\Approver.cs" />
+    <Compile Include="Workflow\Model\Object\Status.cs" />
+    <Compile Include="Workflow\Services\WorkflowService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\font-awesome\font\fontawesome flatlab\" />
+    <Folder Include="Fonts\" />
+    <Folder Include="PageFlowWizard\Database\" />
+    <Folder Include="PageFlowWizard\Object\" />
+    <Folder Include="Pages\ActionManagement\" />
+    <Folder Include="Pages\ActionWizard\" />
+    <Folder Include="Pages\Contract\" />
+    <Folder Include="Pages\DocumentAdministration\" />
+    <Folder Include="Pages\EmployeeAccount\" />
+    <Folder Include="Pages\Family\" />
+    <Folder Include="Pages\HcServices\" />
+    <Folder Include="Pages\HrMonitoring\" />
+    <Folder Include="Pages\Leave\" />
+    <Folder Include="Pages\OvertimeAdministration\" />
+    <Folder Include="Pages\Parameter\Account\" />
+    <Folder Include="Pages\PayrollAdministration\" />
+    <Folder Include="Pages\Performance\" />
+    <Folder Include="Pages\Personal\" />
+    <Folder Include="Pages\TimeManagement\" />
+    <Folder Include="Pages\WorkSchedule\" />
+    <Folder Include="Reports\CurriculumVitae\" />
+    <Folder Include="Reports\Dataset\" />
+    <Folder Include="Reports\Overtime\" />
+    <Folder Include="Reports\Payroll\" />
+    <Folder Include="Reports\Viewer\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54822</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54822/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
