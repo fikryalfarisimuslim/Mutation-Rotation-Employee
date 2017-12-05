@@ -25,7 +25,13 @@
     </style>
 
     <script type='text/javascript'>
-        var index = 1;
+        var index = 1;//index yang dipilih agar tidak redundan
+        
+        document.onload = onLoad();
+
+        function onLoad() {
+            window.localStorage.clear();//clear local storage agar kembali ke posisi awal untuk memilih karyawan
+        }
         /*Untuk menutup jendela terpilih*/
         function hideDiv() {
             if (document.getElementById) {
@@ -137,31 +143,33 @@
         var NIK = [];
         var NAMA = [];
         function submitPilih() {
-            $('#editable-sample2').find('tr').each(function () {
-                var row = $(this);
-                //row.find("td").each(function () {
-                if (row.find('td')) {
-                    var column = 1;
-                    $(this).find("td").each(function () {
-                        //window.alert($(this).text());
-                        if (column == 1) {
-                            UNITKERJA.push($(this).text());
-                        } else if (column == 2) {
-                            JABATAN.push($(this).text());
-                        } else if (column == 3) {
-                            NIK.push($(this).text());
-                        } else if (column == 4){
-                            NAMA.push($(this).text());
-                        }
-                        column++;
-                    });
-                }
-            });
+            
             
             var e = document.getElementById("cpMainContent_DropDownListSK");
             var strUser = e.options[e.selectedIndex].value;
+           
             
-            if (strUser == 6) {//mutasi
+            if (strUser == 06) {//mutasi
+                $('#editable-sample2').find('tr').each(function () {
+                    var row = $(this);
+                    //row.find("td").each(function () {
+                    if (row.find('td')) {
+                        var column = 1;
+                        $(this).find("td").each(function () {
+                            //window.alert($(this).text());
+                            if (column == 1) {
+                                UNITKERJA.push($(this).text());
+                            } else if (column == 2) {
+                                JABATAN.push($(this).text());
+                            } else if (column == 3) {
+                                NIK.push($(this).text());
+                            } else if (column == 4) {
+                                NAMA.push($(this).text());
+                            }
+                            column++;
+                        });
+                    }
+                });
                 window.localStorage.setItem("UNITKERJA", JSON.stringify(UNITKERJA)); // Saving
                 window.localStorage.setItem("JABATAN", JSON.stringify(JABATAN)); // Saving
                 window.localStorage.setItem("NIK", JSON.stringify(NIK)); // Saving

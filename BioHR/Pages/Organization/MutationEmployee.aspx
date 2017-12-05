@@ -107,7 +107,19 @@
                 }
             });
         }
-     
+
+        /*on Close page*/
+        window.onbeforeunload = onClose();
+
+        /*on Back page*/
+        window.onhashchange = onClose();
+        
+        function onClose() {
+            window.localStorage.clear();//clear local storage agar kembali ke posisi awal untuk memilih karyawan
+
+            return null;
+        }
+
 
     </script>
    
