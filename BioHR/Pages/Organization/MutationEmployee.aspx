@@ -37,8 +37,17 @@
         var JABATAN = JSON.parse(window.localStorage.getItem("JABATAN")); // Retrieving
         var NIK = JSON.parse(window.localStorage.getItem("NIK")); // Retrieving
         var NAMA = JSON.parse(window.localStorage.getItem("NAMA")); // Retrieving
+        var STATUS = JSON.parse(window.localStorage.getItem("STATUS")); // Retrieving
         var i, j, n, x;
-        n = NIK.length;
+
+        /*Jika data gak ada yang di pilih*/
+        try {
+            n = NIK.length;
+        }
+        catch (err) {
+            window.open('ListOfEmployee.aspx', '_self', false);
+            window.alert("Pilih karyawan terlebih dahulu");
+        }
         
         function getValueTanggalSK() {
             $(document).ready(function () {
@@ -108,11 +117,10 @@
             });
         }
 
+        
+
         /*on Close page*/
         window.onbeforeunload = onClose();
-
-        /*on Back page*/
-        window.onhashchange = onClose();
         
         function onClose() {
             window.localStorage.clear();//clear local storage agar kembali ke posisi awal untuk memilih karyawan

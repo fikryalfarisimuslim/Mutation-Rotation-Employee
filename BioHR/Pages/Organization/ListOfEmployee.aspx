@@ -175,6 +175,32 @@
                 window.localStorage.setItem("NIK", JSON.stringify(NIK)); // Saving
                 window.localStorage.setItem("NAMA", JSON.stringify(NAMA)); // Saving
                 window.open('MutationEmployee.aspx', '_self', false);
+            } else if (strUser == 07) {
+                $('#editable-sample2').find('tr').each(function () {
+                    var row = $(this);
+                    //row.find("td").each(function () {
+                    if (row.find('td')) {
+                        var column = 1;
+                        $(this).find("td").each(function () {
+                            //window.alert($(this).text());
+                            if (column == 1) {
+                                UNITKERJA.push($(this).text());
+                            } else if (column == 2) {
+                                JABATAN.push($(this).text());
+                            } else if (column == 3) {
+                                NIK.push($(this).text());
+                            } else if (column == 4) {
+                                NAMA.push($(this).text());
+                            }
+                            column++;
+                        });
+                    }
+                });
+                window.localStorage.setItem("UNITKERJA", JSON.stringify(UNITKERJA)); // Saving
+                window.localStorage.setItem("JABATAN", JSON.stringify(JABATAN)); // Saving
+                window.localStorage.setItem("NIK", JSON.stringify(NIK)); // Saving
+                window.localStorage.setItem("NAMA", JSON.stringify(NAMA)); // Saving
+                window.open('RotationEmployee.aspx', '_self', false);
             }
         }
 
