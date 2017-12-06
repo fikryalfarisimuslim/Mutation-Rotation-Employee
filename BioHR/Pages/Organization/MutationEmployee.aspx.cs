@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Web;
@@ -51,11 +52,12 @@ namespace BioHR.Pages.Organization
 
         protected void getValueNoSK(object sender, EventArgs e)
         {
+             
             string noSK = iNoSK.Text.Trim();
             
             dtblContractDetailByNoSK = OrganizationDataCatalog.GetDataContractDetailByNoSK(noSK);
 
-            
+
 
             if (dtblContractDetailByNoSK != null)
             {
@@ -68,7 +70,7 @@ namespace BioHR.Pages.Organization
                     //iUploadSK.Value = dtblContractDetailByNoSK.Rows[0]["FILNM"].ToString();
                     //iUploadSK.Value = "ABCASD";
                     iKeterangan.Value = dtblContractDetailByNoSK.Rows[0]["CTRDC"].ToString();
-                    
+
                     iTanggalSK.Disabled = true;
                     iJudulSK.Disabled = true;
                     iNamaPengesah.Disabled = true;
@@ -78,11 +80,42 @@ namespace BioHR.Pages.Organization
 
                     btnTanggalSK.Disabled = true;
                     btnTanggalBerlaku.Disabled = true;
-                    
-                }
 
-                
+                    btnSK.Enabled = false;
+                    FileUpload2.Enabled = false;
+                }
             }
+        }
+
+        protected void BtnSK_OnClick(object sender, EventArgs e)
+        {
+            string filePath = FileUpload2.PostedFile.FileName;
+            string filename = Path.GetFileName(filePath);
+            string ext = Path.GetExtension(filename);
+            //string contenttype = String.Empty;
+
+            if ((FileUpload2.PostedFile != null) && (FileUpload2.PostedFile.ContentLength > 0))
+            {
+                string fn = System.IO.Path.GetFileName(FileUpload2.PostedFile.FileName);
+                string SaveLocation = Server.MapPath("~/Upload") + "\\" + fn;
+                try
+                {
+                    FileUpload2.PostedFile.SaveAs(SaveLocation);
+                    Response.Write("The file has been uploaded.");
+                }
+                catch (Exception ex)
+                {
+                    Response.Write("Error: " + ex.Message);
+                    //Note: Exception.Message returns a detailed message that describes the current exception. 
+                    //For security reasons, we do not recommend that you return Exception.Message to end users in 
+                    //production environments. It would be better to put a generic error message. 
+                }
+            }
+            else
+            {
+                Response.Write("Please select a file to upload.");
+            }
+
         }
     }
 }

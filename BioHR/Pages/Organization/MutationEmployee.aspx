@@ -118,16 +118,6 @@
 
         
 
-        /*on Close page*/
-        window.onbeforeunload = onClose();
-        
-        function onClose() {
-            window.localStorage.clear();//clear local storage agar kembali ke posisi awal untuk memilih karyawan
-
-            return null;
-        }
-
-
     </script>
    
 </asp:Content>
@@ -297,7 +287,10 @@
                         <div class="container">
                             <label class="control-label col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1">Upload SK</label>
                             <div class="col-lg-8 col-md-8 col-sm-8">
-                               <input type="file" class="form-control" required="required" id="iUploadSK" runat="server"/>
+                                <!--
+                                <input type="file" class="form-control" required="required" id="iUploadSK" runat="server"/>
+                                -->
+                                <asp:FileUpload ID="FileUpload2" runat="server" required="required" CssClass="form-control" />
                             </div>
                         </div>
                     </div>
@@ -306,6 +299,16 @@
                             <label class="control-label col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1">Keterangan</label>
                             <div class="col-lg-8 col-md-8 col-sm-8">
                                 <textarea class="form-control" required="required" id="iKeterangan" rows="3" runat="server" value=""></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="container">
+                            <div class="col-lg-2 col-lg-offset-9" style="text-align:right">
+                                <asp:Button ID="btnSK" runat="server" Text="Submit SK" CssClass="btn btn-primary form-inline" OnClick="BtnSK_OnClick"/>
+                                <!--
+                                <button type="button" class="btn btn-primary form-inline">Submit SK</button>
+                                -->
                             </div>
                         </div>
                     </div>
