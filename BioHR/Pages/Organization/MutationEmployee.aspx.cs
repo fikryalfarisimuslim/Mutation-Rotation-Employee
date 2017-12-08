@@ -92,16 +92,28 @@ namespace BioHR.Pages.Organization
             string filePath = FileUpload2.PostedFile.FileName;
             string filename = Path.GetFileName(filePath);
             string ext = Path.GetExtension(filename);
+            string fn;
+            string filesize = FileUpload2.PostedFile.ContentLength.ToString();;
+            
+            iTanggalSK.Disabled = true;
+            iJudulSK.Disabled = true;
+            iNamaPengesah.Disabled = true;
+            iTanggalBerlaku.Disabled = true;
+            iUploadSK.Disabled = true;
+            iKeterangan.Disabled = true;
             //string contenttype = String.Empty;
 
             if ((FileUpload2.PostedFile != null) && (FileUpload2.PostedFile.ContentLength > 0))
             {
-                string fn = System.IO.Path.GetFileName(FileUpload2.PostedFile.FileName);
+                fn = DateTime.Now.ToString("yyyyMMdd") + "_FileSK_" + filename;
                 string SaveLocation = Server.MapPath("~/Upload") + "\\" + fn;
+                OrganizationDataCatalog.InsertSKEmployee(iNoSK.Text.Trim(), iJudulSK.Value + " " + iKeterangan.Value, iTanggalSK.Value, iNamaPengesah.Value, iTanggalBerlaku.Value, iJudulSK.Value, "1856", fn, fn, "~/Upload", filesize, ext, "SK");
                 try
                 {
                     FileUpload2.PostedFile.SaveAs(SaveLocation);
                     Response.Write("The file has been uploaded.");
+
+                    
                 }
                 catch (Exception ex)
                 {

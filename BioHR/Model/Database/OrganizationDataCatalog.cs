@@ -208,5 +208,45 @@ namespace BioHR.Model.Database
 
             return dataContractDetailAll;
         }
+
+        public static DataTable InsertSKEmployee(string CTRNO, string CTRDC, string CTRDT, string CTRPR, string EFFDT, string CTRTY, string USRDT, string FILNM, string FILOR, string FLPTH, string FILSZ,string FLTYP, string REFCD)
+        {
+            SqlConnection conn = GetConnectionHr();
+            SqlCommand cmd = GetCommand();
+
+            var adapter = new SqlDataAdapter();
+            var dt = new DataTable();
+
+            try
+            {
+                conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandText = @"bioHR.usp_InsertSKEmployee";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@CTRNO", CTRNO);
+                cmd.Parameters.AddWithValue("@CTRDC", CTRDC);
+                cmd.Parameters.AddWithValue("@CTRDT", CTRDT);
+                cmd.Parameters.AddWithValue("@CTRPR", CTRPR);
+                cmd.Parameters.AddWithValue("@EFFDT", EFFDT);
+                cmd.Parameters.AddWithValue("@CTRTY", CTRTY);
+                cmd.Parameters.AddWithValue("@USRDT", USRDT);
+                cmd.Parameters.AddWithValue("@FILNM", FILNM);
+                cmd.Parameters.AddWithValue("@FILOR", FILOR);
+                cmd.Parameters.AddWithValue("@FLPTH", FLPTH);
+                cmd.Parameters.AddWithValue("@FILSZ", FILSZ);
+                cmd.Parameters.AddWithValue("@FLTYP", FLTYP);
+                cmd.Parameters.AddWithValue("@REFCD", REFCD);
+                adapter.SelectCommand = cmd;
+                adapter.Fill(dt);
+            }
+            finally
+            {
+                conn.Close();
+                cmd.Dispose();
+                conn.Dispose();
+            }
+
+            return dt;
+        }
     }
 }

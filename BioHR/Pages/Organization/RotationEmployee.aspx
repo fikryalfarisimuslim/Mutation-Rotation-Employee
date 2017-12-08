@@ -162,7 +162,7 @@
                         <div class="container">
                             <label class="control-label col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1">Judul SK</label>
                             <div class="col-lg-8 col-md-8 col-sm-8">
-                                <input type="text" class="form-control" required="required" id="iJudulSK" runat="server" value="Rotasi" disabled="disabled" />
+                                <input type="text" class="form-control" required="required" id="iJudulSK" runat="server" value="Transfer Karir" disabled="disabled" />
                             </div>
                         </div>
                     </div>
