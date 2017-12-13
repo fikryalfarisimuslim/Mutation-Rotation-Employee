@@ -248,5 +248,42 @@ namespace BioHR.Model.Database
 
             return dt;
         }
+
+        public static DataTable MutationOrganization(string PERNR,string CNAME, string POSID, string PRPOS, string CTRNO, string SKNME, string EFFDT, string USRDT)
+        {
+            
+            SqlConnection conn = GetConnectionHr();
+            SqlCommand cmd = GetCommand();
+
+            var adapter = new SqlDataAdapter();
+            var dt = new DataTable();
+
+            try
+            {
+                conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandText = @"bioHR.usp_MaintainMutasiKaryawan";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@PERNR", PERNR);
+                cmd.Parameters.AddWithValue("@CNAME", CNAME);
+                cmd.Parameters.AddWithValue("@POSID", POSID);
+                cmd.Parameters.AddWithValue("@PRPOS", PRPOS);
+                cmd.Parameters.AddWithValue("@CTRNO", CTRNO);
+                cmd.Parameters.AddWithValue("@SKNME", SKNME);
+                cmd.Parameters.AddWithValue("@EFFDT", EFFDT);
+                cmd.Parameters.AddWithValue("@USRDT", USRDT);
+                adapter.SelectCommand = cmd;
+                adapter.Fill(dt);
+            }
+            finally
+            {
+                conn.Close();
+                cmd.Dispose();
+                conn.Dispose();
+            }
+
+            return dt;
+        
+        }
     }
 }

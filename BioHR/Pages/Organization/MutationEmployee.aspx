@@ -95,13 +95,17 @@
                 document.getElementById('tableCek3').style.display = 'block';
             }
         }
-
+       // ,NIK,NAMA,JABATAN
         function submitMutasi(noTable) {
+            var id, namajabatan;//tujuan mutasi
+            
+
+
             $('#ListEmptyPosition' + noTable).find('tr').each(function () {
                 var row = $(this);
                 if (row.find('input[type="radio"]').is(':checked')) {
                     var x = 0;
-                    var id, namajabatan;
+                    
                    
                     $(this).find("td").each(function () {
                         if (x == 1) {
@@ -111,12 +115,22 @@
                         } 
                         x++;
                     });
-                    window.alert(id + namajabatan);
+                    window.alert(NIK[noTable] + NAMA[noTable] + id + namajabatan);
+                    document.getElementById("<%=txtHidden1.ClientID%>").value = NIK[noTable];
+                    document.getElementById("<%=txtHidden2.ClientID%>").value = NAMA[noTable];
+                    document.getElementById("<%=txtHidden3.ClientID%>").value = id;
+                    document.getElementById("<%=txtHidden4.ClientID%>").value = namajabatan;
+                    window.alert(document.getElementById("<%=txtHidden1.ClientID%>").value);
+                    
+                    //var myValue = "<%= MyValue %>";
+
+                    //window.alert(myValue);
+                    document.getElementById("<%=btnHidden2.ClientID%>").click(); return true;
                 }
             });
         }
 
-        
+       
 
     </script>
    
@@ -329,6 +343,15 @@
                 
                 <div class="panel-body">
                     <asp:PlaceHolder ID = "PlaceHolder1" runat="server" />
+                    <asp:HiddenField id="txtHidden1" runat="server" />
+                    <asp:HiddenField id="txtHidden2" runat="server" />
+                    <asp:HiddenField id="txtHidden3" runat="server" />
+                    <asp:HiddenField id="txtHidden4" runat="server" />
+                    
+                    <div style="display: none;">
+                         <asp:LinkButton ID="btnHidden2" runat="server" CssClass="btn btn-danger" OnClick="btnHidden_OnClick">
+                             </asp:LinkButton>
+                    </div>
                      <script>
                          var KODE = [];
                          var NAMAJABATAN = [];
@@ -459,7 +482,7 @@
                                 myHTML += '                                    </div>';
                                 myHTML += '                                    <div class="row" id="btnTable" >';
                                 myHTML += '                                        <div class="col-lg-3 col-lg-offset-9" style="text-align:right">';
-                                myHTML += '                                            <button type="button" class="btn btn-primary" id="mutasi" onClick="submitMutasi('+i+')">Submit</button>';
+                                myHTML += '                                            <button type="button" class="btn btn-primary" id="mutasi" onClick="submitMutasi(' + i+ ')">Submit</button>';
                                 myHTML += '                                        </div>';
                                 myHTML += '                                    </div>';
                                 myHTML += '                                </div>';

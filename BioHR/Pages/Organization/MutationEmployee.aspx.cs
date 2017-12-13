@@ -8,6 +8,7 @@ using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Services;
 
 namespace BioHR.Pages.Organization
 {
@@ -128,6 +129,30 @@ namespace BioHR.Pages.Organization
                 Response.Write("Please select a file to upload.");
             }
 
+        }
+
+        protected void btnHidden_OnClick(object sender, EventArgs e)
+        {
+            
+            if (!this.IsPostBack)
+            {
+                
+            }
+
+            OrganizationDataCatalog.MutationOrganization(txtHidden1.Value, txtHidden2.Value, txtHidden3.Value, txtHidden4.Value, iNoSK.Text, iJudulSK.Value, iTanggalBerlaku.Value, "1853");
+            Response.Write("Berhasil Mutasi");
+        }
+
+        public static string MyMethod(string name)
+        {
+            return "Hello " + name;
+        }
+
+        protected string MyValue { 
+            get {
+                Response.Write(txtHidden1.Value);
+                return "cacad"; 
+            } 
         }
     }
 }
