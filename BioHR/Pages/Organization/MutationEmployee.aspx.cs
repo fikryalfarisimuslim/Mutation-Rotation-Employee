@@ -47,8 +47,9 @@ namespace BioHR.Pages.Organization
                 //Append the HTML string to Placeholder.
                 PlaceHolder1.Controls.Add(new Literal { Text = html.ToString() });
 
-               
-            
+
+                iTanggalSK.Disabled = true;
+                iTanggalBerlaku.Disabled = true;
         }
 
         protected void getValueNoSK(object sender, EventArgs e)
@@ -100,8 +101,10 @@ namespace BioHR.Pages.Organization
             iJudulSK.Disabled = true;
             iNamaPengesah.Disabled = true;
             iTanggalBerlaku.Disabled = true;
-            iUploadSK.Disabled = true;
+            FileUpload2.Enabled = false;
+            //iUploadSK.Disabled = true;
             iKeterangan.Disabled = true;
+            btnSK.Enabled = false;
             //string contenttype = String.Empty;
 
             if ((FileUpload2.PostedFile != null) && (FileUpload2.PostedFile.ContentLength > 0))
@@ -112,13 +115,13 @@ namespace BioHR.Pages.Organization
                 try
                 {
                     FileUpload2.PostedFile.SaveAs(SaveLocation);
-                    Response.Write("The file has been uploaded.");
+                    //Response.Write("The file has been uploaded.");
 
                     
                 }
                 catch (Exception ex)
                 {
-                    Response.Write("Error: " + ex.Message);
+                    //Response.Write("Error: " + ex.Message);
                     //Note: Exception.Message returns a detailed message that describes the current exception. 
                     //For security reasons, we do not recommend that you return Exception.Message to end users in 
                     //production environments. It would be better to put a generic error message. 
@@ -126,7 +129,7 @@ namespace BioHR.Pages.Organization
             }
             else
             {
-                Response.Write("Please select a file to upload.");
+                //Response.Write("Please select a file to upload.");
             }
 
         }
@@ -140,7 +143,7 @@ namespace BioHR.Pages.Organization
             }
 
             OrganizationDataCatalog.MutationOrganization(txtHidden1.Value, txtHidden2.Value, txtHidden3.Value, txtHidden4.Value, iNoSK.Text, iJudulSK.Value, iTanggalBerlaku.Value, "1853");
-            Response.Write("Berhasil Mutasi");
+            //Response.Write("Berhasil Mutasi");
         }
 
         public static string MyMethod(string name)

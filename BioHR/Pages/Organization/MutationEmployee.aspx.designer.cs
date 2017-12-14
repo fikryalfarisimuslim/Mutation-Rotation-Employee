@@ -64,7 +64,7 @@ namespace BioHR.Pages.Organization {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText iNamaPengesah;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl iNamaPengesah;
         
         /// <summary>
         /// iTanggalBerlaku control.
@@ -164,15 +164,6 @@ namespace BioHR.Pages.Organization {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField txtHidden4;
-        
-        /// <summary>
-        /// txtHidden5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField txtHidden5;
         
         /// <summary>
         /// btnHidden2 control.

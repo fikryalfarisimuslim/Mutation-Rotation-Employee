@@ -36,6 +36,7 @@
                 });
 
             });
+            document.getElementById("iTanggalBerlaku").disabled = false;
         }
 
         function getValueTanggalSK() {
@@ -48,6 +49,7 @@
                 });
 
             });
+            document.getElementById("iTanggalSK").disabled = false;
         }
 
 
@@ -59,14 +61,15 @@
             document.getElementById(iUnitKerja).value = UNITKERJA[selectedValue];
             document.getElementById(iJabatan).value = JABATAN[selectedValue];
 
-            //window.alert(selectedValue);
+            window.alert(UNITKERJA[selectedValue]);
+
         }
 
         /*untuk mengetahui bagian colapse mana yang akan di Set input text Unitkerja dan jabatan*/
         var tempSetInputID;
         function getInputID(i) {
             tempSetInputID = i;
-            //window.alert(i);
+            
         }
 
         /*on Close page*/
@@ -78,6 +81,24 @@
             return null;
         }
         
+        function submitMutasi(noTable) {
+            var id, namajabatan;//tujuan mutasi
+            var idSelect = "#selectRotation" + tempSetInputID + " option:selected";
+            id = $(idSelect).text();
+            id = id.substr(0, id.indexOf(' '))
+
+            var jabatanSelect = "#iJabatan" + tempSetInputID;
+            namajabatan = $(jabatanSelect).val();
+            
+            //window.alert(NIK[noTable] + NAMA[noTable] + id + namajabatan);
+            document.getElementById("<%=txtHidden1.ClientID%>").value = NIK[noTable];
+            document.getElementById("<%=txtHidden2.ClientID%>").value = NAMA[noTable];
+            document.getElementById("<%=txtHidden3.ClientID%>").value = id;
+            document.getElementById("<%=txtHidden4.ClientID%>").value = namajabatan;
+            window.alert("Berhasil Mutasi " + NIK[noTable] + " - " + NIK[noTable]);
+            document.getElementById("<%=btnHidden2.ClientID%>").click(); return true;
+        }
+
     </script>
    
 </asp:Content>
@@ -134,7 +155,7 @@
                                     <!-- <input type="text" class="form-control" required="required" id="iNoSK" /> -->
                                     <span class="input-group-btn">
                                         <asp:LinkButton ID="btnCekNoSK" runat="server" CssClass="btn btn-danger"  OnClick="getValueNoSK">
-                                            <i class="icon-check-sign"></i>
+                                            Cek No SK<!--<i class="icon-check-sign"></i>-->
                                         </asp:LinkButton>
                                     </span>
                                     
@@ -168,9 +189,9 @@
                     </div>
                     <div class="form-group">
                         <div class="container">
-                            <label class="control-label col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1">Pengesah</label>
+                            <label class="control-label col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1">NIK Pengesah</label>
                             <div class="col-lg-8 col-md-8 col-sm-8">
-                                <input type="text" class="form-control" required="required" id="iNamaPengesah" runat="server"/>
+                                <input type="number" class="form-control" required="required" id="iNamaPengesah" runat="server"/>
                             </div>
                         </div>
                     </div>
@@ -231,6 +252,16 @@
                     </div>
                 </header>
                 <div class="panel-body">
+                    <asp:PlaceHolder ID = "PlaceHolder1" runat="server" />
+                    <asp:HiddenField id="txtHidden1" runat="server" />
+                    <asp:HiddenField id="txtHidden2" runat="server" />
+                    <asp:HiddenField id="txtHidden3" runat="server" />
+                    <asp:HiddenField id="txtHidden4" runat="server" />
+                    
+                    <div style="display: none;">
+                         <asp:LinkButton ID="btnHidden2" runat="server" CssClass="btn btn-danger" OnClick="btnHidden_OnClick">
+                             </asp:LinkButton>
+                    </div>
                     <div id="accordion" class="panel-group m-bot20">
 
                         <script>

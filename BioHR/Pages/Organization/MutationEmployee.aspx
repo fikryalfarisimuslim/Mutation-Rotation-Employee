@@ -58,6 +58,7 @@
                 });
 
             });
+            document.getElementById("iTanggalSK").disabled = false;
         }
 
         function getValueTanggalBerlaku() {
@@ -70,6 +71,7 @@
                 });
 
             });
+            document.getElementById("iTanggalBerlaku").disabled = false;
         }
 
         function showDiv() {
@@ -115,17 +117,16 @@
                         } 
                         x++;
                     });
-                    window.alert(NIK[noTable] + NAMA[noTable] + id + namajabatan);
+                    //window.alert(NIK[noTable] + NAMA[noTable] + id + namajabatan);
                     document.getElementById("<%=txtHidden1.ClientID%>").value = NIK[noTable];
                     document.getElementById("<%=txtHidden2.ClientID%>").value = NAMA[noTable];
                     document.getElementById("<%=txtHidden3.ClientID%>").value = id;
                     document.getElementById("<%=txtHidden4.ClientID%>").value = namajabatan;
-                    window.alert(document.getElementById("<%=txtHidden1.ClientID%>").value);
-                    
-                    //var myValue = "<%= MyValue %>";
-
-                    //window.alert(myValue);
+                    window.alert("Berhasil Mutasi " + NIK[noTable] + " - " + NIK[noTable]);
                     document.getElementById("<%=btnHidden2.ClientID%>").click(); return true;
+
+                    
+                    
                 }
             });
         }
@@ -230,7 +231,7 @@
                                     <!-- <input type="text" class="form-control" required="required" id="iNoSK" /> -->
                                     <span class="input-group-btn">
                                         <asp:LinkButton ID="btnCekNoSK" runat="server" CssClass="btn btn-danger" OnClick="getValueNoSK">
-                                            <i class="icon-check-sign"></i>
+                                            Cek No SK<!--<i class="icon-check-sign"></i>-->
                                         </asp:LinkButton>
                                     </span>
                                     
@@ -275,9 +276,9 @@
                     </div>
                     <div class="form-group">
                         <div class="container">
-                            <label class="control-label col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1">Pengesah</label>
+                            <label class="control-label col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1">NIK Pengesah</label>
                             <div class="col-lg-8 col-md-8 col-sm-8">
-                                <input type="text" class="form-control" required="required" id="iNamaPengesah" runat="server"/>
+                                <input type="number" class="form-control" required="required" id="iNamaPengesah" runat="server"/>
                             </div>
                         </div>
                     </div>
@@ -482,7 +483,7 @@
                                 myHTML += '                                    </div>';
                                 myHTML += '                                    <div class="row" id="btnTable" >';
                                 myHTML += '                                        <div class="col-lg-3 col-lg-offset-9" style="text-align:right">';
-                                myHTML += '                                            <button type="button" class="btn btn-primary" id="mutasi" onClick="submitMutasi(' + i+ ')">Submit</button>';
+                                myHTML += '                                            <button type="button" class="btn btn-primary" id="mutasi' + i + '" onClick="submitMutasi(' + i + ')">Submit</button>';
                                 myHTML += '                                        </div>';
                                 myHTML += '                                    </div>';
                                 myHTML += '                                </div>';

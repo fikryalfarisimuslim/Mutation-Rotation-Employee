@@ -17,7 +17,8 @@ namespace BioHR.Pages.Organization
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            iTanggalSK.Disabled = true;
+            iTanggalBerlaku.Disabled = true;
         }
 
         protected void getValueNoSK(object sender, EventArgs e)
@@ -68,8 +69,9 @@ namespace BioHR.Pages.Organization
             iJudulSK.Disabled = true;
             iNamaPengesah.Disabled = true;
             iTanggalBerlaku.Disabled = true;
-            //iUploadSK.Disabled = true;
+            FileUpload2.Enabled = false;
             iKeterangan.Disabled = true;
+            btnSK.Enabled = false;
             //string contenttype = String.Empty;
 
             if ((FileUpload2.PostedFile != null) && (FileUpload2.PostedFile.ContentLength > 0))
@@ -80,13 +82,13 @@ namespace BioHR.Pages.Organization
                 try
                 {
                     FileUpload2.PostedFile.SaveAs(SaveLocation);
-                    Response.Write("The file has been uploaded.");
+                    //Response.Write("The file has been uploaded.");
 
 
                 }
                 catch (Exception ex)
                 {
-                    Response.Write("Error: " + ex.Message);
+                    //Response.Write("Error: " + ex.Message);
                     //Note: Exception.Message returns a detailed message that describes the current exception. 
                     //For security reasons, we do not recommend that you return Exception.Message to end users in 
                     //production environments. It would be better to put a generic error message. 
@@ -94,9 +96,21 @@ namespace BioHR.Pages.Organization
             }
             else
             {
-                Response.Write("Please select a file to upload.");
+                //Response.Write("Please select a file to upload.");
             }
 
+        }
+
+        protected void btnHidden_OnClick(object sender, EventArgs e)
+        {
+
+            if (!this.IsPostBack)
+            {
+
+            }
+
+            OrganizationDataCatalog.MutationOrganization(txtHidden1.Value, txtHidden2.Value, txtHidden3.Value, txtHidden4.Value, iNoSK.Text, iJudulSK.Value, iTanggalBerlaku.Value, "1853");
+            //Response.Write("Berhasil Mutasi");
         }
     }
 }
