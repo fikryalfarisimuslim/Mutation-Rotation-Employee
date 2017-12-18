@@ -245,7 +245,7 @@ namespace BioHR.Model.Database
             return dt;
         }
 
-        public static DataTable MutationOrganization(string PERNR,string CNAME, string POSID, string PRPOS, string CTRNO, string SKNME, string EFFDT, string USRDT)
+        public static DataTable MutationOrganization(string PERNR,string CNAME, string POSID, string PRPOS, string CTRNO, string SKNME, string EFFDT, string USRDT, int SEQNO)
         {
             
             SqlConnection conn = GetConnectionHr();
@@ -268,6 +268,7 @@ namespace BioHR.Model.Database
                 cmd.Parameters.AddWithValue("@SKNME", SKNME);
                 cmd.Parameters.AddWithValue("@EFFDT", EFFDT);
                 cmd.Parameters.AddWithValue("@USRDT", USRDT);
+                cmd.Parameters.AddWithValue("@SEQNO", SEQNO);
                 adapter.SelectCommand = cmd;
                 adapter.Fill(dt);
             }

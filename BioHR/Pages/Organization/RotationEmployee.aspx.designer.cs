@@ -157,6 +157,15 @@ namespace BioHR.Pages.Organization {
         protected global::System.Web.UI.WebControls.HiddenField txtHidden4;
         
         /// <summary>
+        /// txtHidden5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField txtHidden5;
+        
+        /// <summary>
         /// btnHidden2 control.
         /// </summary>
         /// <remarks>

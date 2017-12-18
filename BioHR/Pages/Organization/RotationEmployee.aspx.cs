@@ -109,7 +109,7 @@ namespace BioHR.Pages.Organization
 
             }
 
-            OrganizationDataCatalog.MutationOrganization(txtHidden1.Value, txtHidden2.Value, txtHidden3.Value, txtHidden4.Value, iNoSK.Text, iJudulSK.Value, iTanggalBerlaku.Value, "1853");
+            OrganizationDataCatalog.MutationOrganization(txtHidden1.Value, txtHidden2.Value, txtHidden3.Value, txtHidden4.Value, iNoSK.Text, iJudulSK.Value, iTanggalBerlaku.Value, "1853", Convert.ToInt32(txtHidden5.Value));
             //Response.Write("Berhasil Mutasi");
         }
     }

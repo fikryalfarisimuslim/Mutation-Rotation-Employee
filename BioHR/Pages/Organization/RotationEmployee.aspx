@@ -95,6 +95,7 @@
             document.getElementById("<%=txtHidden2.ClientID%>").value = NAMA[noTable];
             document.getElementById("<%=txtHidden3.ClientID%>").value = id;
             document.getElementById("<%=txtHidden4.ClientID%>").value = namajabatan;
+            document.getElementById("<%=txtHidden5.ClientID%>").value = noTable + 1;
             window.alert("Berhasil Mutasi " + NIK[noTable] + " - " + NIK[noTable]);
             document.getElementById("<%=btnHidden2.ClientID%>").click(); return true;
         }
@@ -257,6 +258,7 @@
                     <asp:HiddenField id="txtHidden2" runat="server" />
                     <asp:HiddenField id="txtHidden3" runat="server" />
                     <asp:HiddenField id="txtHidden4" runat="server" />
+                    <asp:HiddenField id="txtHidden5" runat="server" />
                     
                     <div style="display: none;">
                          <asp:LinkButton ID="btnHidden2" runat="server" CssClass="btn btn-danger" OnClick="btnHidden_OnClick">
