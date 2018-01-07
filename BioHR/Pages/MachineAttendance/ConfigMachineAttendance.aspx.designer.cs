@@ -10,7 +10,7 @@
 namespace BioHR.Pages.MachineAttendance {
     
     
-    public partial class AddMachineAttendance {
+    public partial class ConfigMachineAttendance {
         
         /// <summary>
         /// ButtonAdd control.

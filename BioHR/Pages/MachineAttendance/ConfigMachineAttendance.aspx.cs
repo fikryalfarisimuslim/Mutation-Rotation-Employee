@@ -11,7 +11,7 @@ using BioHR.Model.Database;
 
 namespace BioHR.Pages.MachineAttendance
 {
-    public partial class AddMachineAttendance : BioHR.Controller.BasePage
+    public partial class ConfigMachineAttendance : BioHR.Controller.BasePage
     {
 
         protected void Page_Load(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace BioHR.Pages.MachineAttendance
             gvConfigMachineAttendance.DataBind();
         }
 
-        protected void tbSearch_onClick(object sender, EventArgs e)
+        protected void btnSearch_Click(object sender, EventArgs e)
         {
             gvConfigMachineAttendance.DataSource = MachineProcessDataCatalog.GetSearchingMachineBy(tbSearch.Text.Trim(), Convert.ToInt32(ddlTipeMesin.SelectedValue));
             gvConfigMachineAttendance.DataBind();

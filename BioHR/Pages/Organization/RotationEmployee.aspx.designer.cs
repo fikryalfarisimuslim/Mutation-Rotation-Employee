@@ -94,6 +94,15 @@ namespace BioHR.Pages.Organization {
         protected global::System.Web.UI.WebControls.FileUpload FileUpload2;
         
         /// <summary>
+        /// fileUploadText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText fileUploadText;
+        
+        /// <summary>
         /// iKeterangan control.
         /// </summary>
         /// <remarks>
@@ -173,5 +182,23 @@ namespace BioHR.Pages.Organization {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnHidden2;
+        
+        /// <summary>
+        /// btnBatal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnBatal;
+        
+        /// <summary>
+        /// btnSimpan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnSimpan;
     }
 }

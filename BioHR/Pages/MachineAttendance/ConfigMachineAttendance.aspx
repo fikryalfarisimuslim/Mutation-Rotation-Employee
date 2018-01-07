@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Config Machine Attendance" Language="C#" MasterPageFile="~/MasterPages/BackEndHorizontal.Master" AutoEventWireup="true" CodeBehind="ConfigMachineAttendance.aspx.cs" Inherits="BioHR.Pages.MachineAttendance.AddMachineAttendance" %>
+﻿<%@ Page Title="Config Machine Attendance" Language="C#" MasterPageFile="~/MasterPages/BackEndHorizontal.Master" AutoEventWireup="true" CodeBehind="ConfigMachineAttendance.aspx.cs" Inherits="BioHR.Pages.MachineAttendance.ConfigMachineAttendance" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cpHead" runat="server">
     <style type="text/css">
@@ -73,7 +73,7 @@
                                 </asp:DropDownList>
                             </div>
                             <div class="col-md-1" style="text-align:left">
-                                <asp:LinkButton ID="ButtonSearch" runat="server" CssClass="btn btn-info form-inline" OnClick="tbSearch_onClick">
+                                <asp:LinkButton ID="ButtonSearch" runat="server" CssClass="btn btn-info form-inline" OnClick="btnSearch_Click">
                                     <i class="icon icon-search"></i>
                                 </asp:LinkButton>
                             </div>

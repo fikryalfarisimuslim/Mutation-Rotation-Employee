@@ -24,34 +24,40 @@ namespace BioHR.Pages.Organization
         protected void getValueNoSK(object sender, EventArgs e)
         {
             string noSK = iNoSK.Text.Trim();
+            string tanggalSK;
+            string tanggalBerlaku;
 
             dtblContractDetailRotation = OrganizationDataCatalog.GetDataContractDetailRotation(noSK);
-
-
 
             if (dtblContractDetailRotation != null)
             {
                 foreach (DataRow dr in dtblContractDetailRotation.Rows)
                 {
-                    iTanggalSK.Value = dtblContractDetailRotation.Rows[0]["CTRDT"].ToString();
+                    tanggalSK = dtblContractDetailRotation.Rows[0]["CTRDT"].ToString();
+                    DateTime dtTanggalSK = Convert.ToDateTime(tanggalSK);
+                    iTanggalSK.Value = string.Format("{0:MM/dd/yyyy}", dtTanggalSK);
+
                     iJudulSK.Value = dtblContractDetailRotation.Rows[0]["PRMNM"].ToString();
-                    iNamaPengesah.Value = dtblContractDetailRotation.Rows[0]["CNAME"].ToString();
-                    iTanggalBerlaku.Value = dtblContractDetailRotation.Rows[0]["EFFDT"].ToString();
-                    //iUploadSK.Value = dtblContractDetailByNoSK.Rows[0]["FILNM"].ToString();
-                    //iUploadSK.Value = "ABCASD";
+                    iNamaPengesah.Value = dtblContractDetailRotation.Rows[0]["CTRPR"].ToString();
+
+                    tanggalBerlaku = dtblContractDetailRotation.Rows[0]["EFFDT"].ToString();
+                    DateTime dtTanggalBerlaku = Convert.ToDateTime(tanggalBerlaku);
+                    iTanggalBerlaku.Value = string.Format("{0:MM/dd/yyyy}", dtTanggalBerlaku);
+
+                    fileUploadText.Value = dtblContractDetailRotation.Rows[0]["FILNM"].ToString();
                     iKeterangan.Value = dtblContractDetailRotation.Rows[0]["CTRDC"].ToString();
 
                     iTanggalSK.Disabled = true;
                     iJudulSK.Disabled = true;
                     iNamaPengesah.Disabled = true;
                     iTanggalBerlaku.Disabled = true;
+                    FileUpload2.Enabled = false;
                     iKeterangan.Disabled = true;
 
                     btnTanggalSK.Disabled = true;
                     btnTanggalBerlaku.Disabled = true;
-
                     btnSK.Enabled = false;
-                    FileUpload2.Enabled = false;
+                    
 
                 }
             }
@@ -111,6 +117,16 @@ namespace BioHR.Pages.Organization
 
             OrganizationDataCatalog.MutationOrganization(txtHidden1.Value, txtHidden2.Value, txtHidden3.Value, txtHidden4.Value, iNoSK.Text, iJudulSK.Value, iTanggalBerlaku.Value, "1853", Convert.ToInt32(txtHidden5.Value));
             //Response.Write("Berhasil Mutasi");
+        }
+
+        protected void btnBatal_OnClick(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Pages/Organization/ListOfEmployee.aspx");
+        }
+
+        protected void btnSimpan_OnClick(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Pages/Organization/ListOfEmployee.aspx");
         }
     }
 }

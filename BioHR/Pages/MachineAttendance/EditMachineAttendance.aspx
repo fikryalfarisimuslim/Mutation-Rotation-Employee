@@ -88,7 +88,7 @@
                             <div class="col-lg-8 col-md-8 col-sm-8">
                                 <asp:DropDownList ID="ddlTipeMesin" runat="server" CssClass="form-control">
                                         <asp:ListItem Enabled="true" Text="S2K" Value="1"></asp:ListItem>
-                                        <asp:ListItem Text="MTX Amano" Value="2"></asp:ListItem>
+                                        <asp:ListItem Text="HIT" Value="2"></asp:ListItem>
                                 </asp:DropDownList>
                             </div>
                         </div>

@@ -147,9 +147,10 @@
             
             var e = document.getElementById("cpMainContent_DropDownListSK");
             var strUser = e.options[e.selectedIndex].value;
+            //window.alert(strUser);
            
             
-            if (strUser == 06) {//mutasi
+            if (strUser == 6) {//mutasi
                 $('#editable-sample2').find('tr').each(function () {
                     var row = $(this);
                     //row.find("td").each(function () {
@@ -175,7 +176,7 @@
                 window.localStorage.setItem("NIK", JSON.stringify(NIK)); // Saving
                 window.localStorage.setItem("NAMA", JSON.stringify(NAMA)); // Saving
                 window.open('MutationEmployee.aspx', '_self', false);
-            } else if (strUser == 07) {
+            } else if (strUser == 7) {
                 $('#editable-sample2').find('tr').each(function () {
                     var row = $(this);
                     //row.find("td").each(function () {

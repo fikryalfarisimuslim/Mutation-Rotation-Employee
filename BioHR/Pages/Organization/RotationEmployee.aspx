@@ -217,6 +217,7 @@
                             <label class="control-label col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1">Upload SK</label>
                             <div class="col-lg-8 col-md-8 col-sm-8">
                                <asp:FileUpload ID="FileUpload2" runat="server" required="required" CssClass="form-control" />
+                                <input type="text" class="form-control" value="" id="fileUploadText" runat="server" ClientIDMode="Static"/>
                             </div>
                         </div>
                     </div>
@@ -417,10 +418,10 @@
 
                     <div class="row">
                         <div class="col-lg-1 col-lg-offset-5">
-                            <button type="button" class="btn btn-danger form-control">Batal</button>
+                            <asp:LinkButton ID="btnBatal" runat="server" CssClass="btn btn-danger form-control" OnClick="btnBatal_OnClick">Batal</asp:LinkButton>
                         </div>
                         <div class="col-lg-1">
-                            <button type="button" class="btn btn-primary form-control">Selesai</button>
+                            <asp:LinkButton ID="btnSimpan" runat="server" CssClass="btn btn-primary form-control" OnClick="btnSimpan_OnClick">Simpan</asp:LinkButton>
                         </div>
                     </div>
                 </div>

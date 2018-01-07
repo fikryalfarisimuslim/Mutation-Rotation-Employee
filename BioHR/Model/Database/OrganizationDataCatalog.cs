@@ -80,7 +80,7 @@ namespace BioHR.Model.Database
             {
                 conn.Open();
                 cmd.Connection = conn;
-                cmd.CommandText = @"bioHR.usp_Get_ListAllEmployee";
+                cmd.CommandText = @"bioHR.usp_GetListAllEmployee";
                 cmd.CommandType = CommandType.StoredProcedure;
                 adapter.SelectCommand = cmd;
                 adapter.Fill(dataListAllEmployee);
